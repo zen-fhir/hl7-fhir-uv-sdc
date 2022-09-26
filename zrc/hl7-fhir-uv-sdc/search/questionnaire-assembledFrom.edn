@@ -8,4 +8,5 @@
   :fhir/type "token",
   :name "assembled-from",
   :expr
-  {:Questionnaire {:jsonpath [], :data-types #{}, :template :token}}}}
+  {:Questionnaire
+   {:knife [], :jsonpath [], :data-types #{}, :template :token}}}}
