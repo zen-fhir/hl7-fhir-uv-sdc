@@ -3,9 +3,16 @@
  value-set
  {:zen/tags #{zen.fhir/value-set},
   :zen/desc "The standard context for Questionnaire at launch time",
-  :zen.fhir/version "0.5.25-1",
+  :zen.fhir/version "0.5.26",
   :fhir/code-systems
   #{{:fhir/url "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
      :zen.fhir/content :bundled}},
   :uri "http://hl7.org/fhir/uv/sdc/ValueSet/launchContext",
-  :version "3.0.0"}}
+  :version "3.0.0",
+  :ftr
+  {:module "ig",
+   :source-url "node_modules/hl7.fhir.uv.sdc",
+   :source-type :ig,
+   :ftr-path "ftr",
+   :zen/package-name "hl7-fhir-uv-sdc",
+   :tag "init"}}}
