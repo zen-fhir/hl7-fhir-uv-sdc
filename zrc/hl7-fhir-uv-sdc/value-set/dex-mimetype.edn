@@ -4,7 +4,7 @@
  {:zen/tags #{zen.fhir/value-set},
   :zen/desc
   "The list of mime types that identify mapping languages supported by DEX.",
-  :zen.fhir/version "0.5.26-3",
+  :zen.fhir/version "0.5.26-4",
   :fhir/code-systems
   #{{:fhir/url "urn:ietf:bcp:13", :zen.fhir/content :bundled}},
   :uri "http://hl7.org/fhir/uv/sdc/ValueSet/dex-mimetype",

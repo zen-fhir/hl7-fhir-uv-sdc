@@ -26,7 +26,7 @@
    hl7-fhir-r4-core.Element
    hl7-fhir-r4-core.Identifier},
  schema
- {:zen.fhir/version "0.5.26-3",
+ {:zen.fhir/version "0.5.26-4",
   :confirms
   #{hl7-fhir-r4-core.QuestionnaireResponse/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
