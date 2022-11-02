@@ -4,7 +4,7 @@
  {:zen/tags #{zen.fhir/value-set},
   :zen/desc
   "List of resource types that can record answers to a Questionnaire.",
-  :zen.fhir/version "0.5.28-1",
+  :zen.fhir/version "0.5.30",
   :fhir/code-systems
   #{{:fhir/url "http://hl7.org/fhir/resource-types",
      :zen.fhir/content :bundled}},
