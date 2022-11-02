@@ -51,7 +51,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave",
-  :zen.fhir/version "0.5.28",
+  :zen.fhir/version "0.5.28-1",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
