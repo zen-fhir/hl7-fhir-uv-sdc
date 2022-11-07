@@ -6,7 +6,7 @@
    hl7-fhir-r4-core.Coding
    hl7-fhir-r4-core.Quantity},
  schema
- {:zen.fhir/version "0.5.30-1",
+ {:zen.fhir/version "0.5.31",
   :confirms #{hl7-fhir-r4-core.UsageContext/schema},
   :zen/tags #{zen/schema zen.fhir/structure-schema},
   :zen.fhir/profileUri
