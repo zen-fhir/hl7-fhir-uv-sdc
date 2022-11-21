@@ -3,7 +3,7 @@
  value-set
  {:zen/tags #{zen.fhir/value-set},
   :zen/desc "The standard context for Questionnaire at launch time",
-  :zen.fhir/version "0.5.33-1",
+  :zen.fhir/version "0.6.0",
   :fhir/code-systems
   #{{:fhir/url "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
      :zen.fhir/content :bundled}},
