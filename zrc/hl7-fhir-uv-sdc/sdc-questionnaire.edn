@@ -1,21 +1,13 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire,
  import
- #{hl7-fhir-r4-core.integer
-   hl7-fhir-r4-core.BackboneElement
-   hl7-fhir-r4-core.canonical
-   hl7-fhir-r4-core.code
-   zen.fhir
+ #{zen.fhir
    hl7-fhir-uv-sdc.sdc-questionnaire-performerType
-   hl7-fhir-r4-core.boolean
-   hl7-fhir-r4-core.string
    hl7-fhir-r4-core.designNote
-   hl7-fhir-r4-core.uri
    hl7-fhir-r4-core.Questionnaire
-   hl7-fhir-r4-core.Element
    hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer
    hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation},
  schema
- {:zen.fhir/version "0.6.3",
+ {:zen.fhir/version "0.6.4",
   :confirms #{hl7-fhir-r4-core.Questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -33,10 +25,7 @@
      :fhir/extensionUri
      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
      :fhir/flags #{:MS}}},
-   :subjectType
-   {:type zen/vector,
-    :every
-    {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}}},
+   :subjectType {:type zen/vector, :every #:fhir{:flags #{:MS}}},
    :assemble-expectation
    {:confirms
     #{hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema},
@@ -46,50 +35,23 @@
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
-     {:_maxLength {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :linkId
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}},
-      :repeats
-      {:confirms #{hl7-fhir-r4-core.boolean/schema},
-       :fhir/flags #{:MS}},
-      :_prefix {:confirms #{hl7-fhir-r4-core.Element/schema}},
+     {:linkId #:fhir{:flags #{:MS}},
+      :repeats #:fhir{:flags #{:MS}},
       :item {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-      :_type {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :type
-      {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}},
-      :_linkId {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :_required {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :answerOption
-      {:type zen/vector,
-       :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :fhir/flags #{:MS}}},
-      :prefix
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}},
-      :_readOnly {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :readOnly
-      {:confirms #{hl7-fhir-r4-core.boolean/schema},
-       :fhir/flags #{:MS}},
-      :answerValueSet
-      {:confirms #{hl7-fhir-r4-core.canonical/schema},
-       :fhir/flags #{:MS}},
+      :type #:fhir{:flags #{:MS}},
+      :answerOption {:type zen/vector, :every #:fhir{:flags #{:MS}}},
+      :prefix #:fhir{:flags #{:MS}},
+      :readOnly #:fhir{:flags #{:MS}},
+      :answerValueSet #:fhir{:flags #{:MS}},
       :initial
       {:type zen/vector,
        :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :type zen/map,
+       {:type zen/map,
         :keys {:value #:fhir{:polymorphic true, :flags #{:MS}}},
         :fhir/flags #{:MS}}},
-      :_text {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :_answerValueSet {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :maxLength
-      {:confirms #{hl7-fhir-r4-core.integer/schema},
-       :fhir/flags #{:MS}},
+      :maxLength #:fhir{:flags #{:MS}},
       :designNote
       {:confirms #{hl7-fhir-r4-core.designNote/schema},
        :fhir/extensionUri
@@ -101,38 +63,24 @@
         #{hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema},
         :fhir/extensionUri
         "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}},
-      :_repeats {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :required
-      {:confirms #{hl7-fhir-r4-core.boolean/schema},
-       :fhir/flags #{:MS}},
-      :text
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}}},
+      :required #:fhir{:flags #{:MS}},
+      :text #:fhir{:flags #{:MS}}},
      :require #{:linkId :type},
      :fhir/flags #{:MS}}},
-   :_status {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :title
-   {:confirms #{hl7-fhir-r4-core.string/schema}, :fhir/flags #{:MS}},
-   :status
-   {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}},
-   :url {:confirms #{hl7-fhir-r4-core.uri/schema}, :fhir/flags #{:MS}},
-   :_title {:confirms #{hl7-fhir-r4-core.Element/schema}},
+   :title #:fhir{:flags #{:MS}},
+   :status #:fhir{:flags #{:MS}},
+   :url #:fhir{:flags #{:MS}},
    :designNote
    {:confirms #{hl7-fhir-r4-core.designNote/schema},
     :fhir/extensionUri
     "http://hl7.org/fhir/StructureDefinition/designNote"},
-   :version
-   {:confirms #{hl7-fhir-r4-core.string/schema}, :fhir/flags #{:MS}},
-   :_version {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :_subjectType
-   {:type zen/vector,
-    :every {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+   :version #:fhir{:flags #{:MS}},
+   :_subjectType {:type zen/vector, :every {}},
    :terminologyServer
    {:type zen/vector,
     :every
     {:confirms
      #{hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema},
      :fhir/extensionUri
-     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}},
-   :_url {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}}},
   :zen.fhir/type "Questionnaire"}}

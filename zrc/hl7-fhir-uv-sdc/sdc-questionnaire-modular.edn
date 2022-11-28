@@ -1,13 +1,12 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-modular,
  import
- #{hl7-fhir-r4-core.BackboneElement
-   zen.fhir
+ #{zen.fhir
    hl7-fhir-uv-sdc.sdc-questionnaire-subQuestionnaire
    hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
    hl7-fhir-uv-sdc.sdc-questionnaire
    hl7-fhir-uv-sdc.sdc-questionnaire-assembleContext},
  schema
- {:zen.fhir/version "0.6.3",
+ {:zen.fhir/version "0.6.4",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -32,8 +31,7 @@
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
      {:subQuestionnaire
       {:confirms

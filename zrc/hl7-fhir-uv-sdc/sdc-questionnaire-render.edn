@@ -2,23 +2,19 @@
  import
  #{hl7-fhir-r4-core.rendering-styleSensitive
    hl7-fhir-r4-core.questionnaire-hidden
-   hl7-fhir-r4-core.BackboneElement
    zen.fhir
    hl7-fhir-r4-core.questionnaire-displayCategory
    hl7-fhir-uv-sdc.sdc-questionnaire-collapsible
    hl7-fhir-uv-sdc.sdc-questionnaire-openLabel
-   hl7-fhir-r4-core.string
    hl7-fhir-uv-sdc.sdc-questionnaire-shortText
    hl7-fhir-r4-core.entryFormat
    hl7-fhir-uv-sdc.sdc-questionnaire-optionalDisplay
-   hl7-fhir-r4-core.Coding
    hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia
    hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia
    hl7-fhir-r4-core.questionnaire-sliderStepValue
    hl7-fhir-r4-core.cqf-expression
    hl7-fhir-r4-core.questionnaire-itemControl
    hl7-fhir-uv-sdc.sdc-questionnaire-choiceColumn
-   hl7-fhir-r4-core.Element
    hl7-fhir-uv-sdc.sdc-questionnaire-width
    hl7-fhir-uv-sdc.sdc-questionnaire
    hl7-fhir-r4-core.rendering-style
@@ -32,7 +28,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
@@ -42,10 +38,8 @@
     :fhir/extensionUri
     "http://hl7.org/fhir/StructureDefinition/rendering-styleSensitive",
     :fhir/flags #{:MS}},
-   :title {:confirms #{hl7-fhir-r4-core.string/schema}},
    :_title
-   {:confirms #{hl7-fhir-r4-core.Element/schema},
-    :type zen/map,
+   {:type zen/map,
     :keys
     {:title-renderingStyle
      {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -58,8 +52,7 @@
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
      {:itemHidden
       {:confirms #{hl7-fhir-r4-core.questionnaire-hidden/schema},
@@ -71,8 +64,7 @@
        :fhir/extensionUri
        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"},
       :_prefix
-      {:confirms #{hl7-fhir-r4-core.Element/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
        {:itemLabel-renderingStyle
         {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -116,8 +108,7 @@
       :answerOption
       {:type zen/vector,
        :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :type zen/map,
+       {:type zen/map,
         :keys
         {:itemAnswerMedia
          {:confirms
@@ -127,10 +118,8 @@
          :value
          {:type zen/map,
           :keys
-          {:string {:confirms #{hl7-fhir-r4-core.string/schema}},
-           :_string
-           {:confirms #{hl7-fhir-r4-core.Element/schema},
-            :type zen/map,
+          {:_string
+           {:type zen/map,
             :keys
             {:optionString-renderingStyle
              {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -141,13 +130,10 @@
               :fhir/extensionUri
               "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}},
            :Coding
-           {:confirms #{hl7-fhir-r4-core.Coding/schema},
-            :type zen/map,
+           {:type zen/map,
             :keys
-            {:display {:confirms #{hl7-fhir-r4-core.string/schema}},
-             :_display
-             {:confirms #{hl7-fhir-r4-core.Element/schema},
-              :type zen/map,
+            {:_display
+             {:type zen/map,
               :keys
               {:optionDisplay-renderingStyle
                {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -157,7 +143,6 @@
                {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
                 :fhir/extensionUri
                 "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}}}}}}}},
-      :prefix {:confirms #{hl7-fhir-r4-core.string/schema}},
       :itemOptionalDisplay
       {:confirms
        #{hl7-fhir-uv-sdc.sdc-questionnaire-optionalDisplay/schema},
@@ -176,8 +161,7 @@
        "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
        :fhir/flags #{:MS}},
       :_text
-      {:confirms #{hl7-fhir-r4-core.Element/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
        {:groupText-renderingStyle
         {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -204,5 +188,4 @@
       {:confirms
        #{hl7-fhir-r4-core.questionnaire-sliderStepValue/schema},
        :fhir/extensionUri
-       "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue"},
-      :text {:confirms #{hl7-fhir-r4-core.string/schema}}}}}}}}
+       "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue"}}}}}}}

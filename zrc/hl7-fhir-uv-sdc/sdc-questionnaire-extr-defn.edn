@@ -2,12 +2,9 @@
  import
  #{hl7-fhir-uv-sdc.sdc-questionnaire-initialExpression
    hl7-fhir-r4-core.questionnaire-hidden
-   hl7-fhir-r4-core.BackboneElement
    zen.fhir
    hl7-fhir-uv-sdc.sdc-questionnaire-itemExtractionContext
    hl7-fhir-r4-core.questionnaire-unit
-   hl7-fhir-r4-core.uri
-   hl7-fhir-r4-core.Element
    hl7-fhir-uv-sdc.sdc-questionnaire
    hl7-fhir-uv-sdc.sdc-questionnaire-isSubject
    hl7-fhir-r4-core.variable
@@ -19,7 +16,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-defn",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
@@ -39,8 +36,7 @@
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
      {:unit
       {:confirms #{hl7-fhir-r4-core.questionnaire-unit/schema},
@@ -72,6 +68,4 @@
       {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema},
        :fhir/extensionUri
        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject"},
-      :definition
-      {:confirms #{hl7-fhir-r4-core.uri/schema}, :fhir/flags #{:MS}},
-      :_definition {:confirms #{hl7-fhir-r4-core.Element/schema}}}}}}}}
+      :definition #:fhir{:flags #{:MS}}}}}}}}

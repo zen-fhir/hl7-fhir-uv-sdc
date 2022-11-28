@@ -3,7 +3,6 @@
  #{hl7-fhir-uv-sdc.sdc-questionnaire-launchContext
    hl7-fhir-uv-sdc.sdc-questionnaire-initialExpression
    hl7-fhir-r4-core.questionnaire-hidden
-   hl7-fhir-r4-core.BackboneElement
    zen.fhir
    hl7-fhir-uv-sdc.sdc-questionnaire-contextExpression
    hl7-fhir-r4-core.questionnaire-unit
@@ -21,7 +20,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
@@ -54,8 +53,7 @@
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
      {:isSubject
       {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema},

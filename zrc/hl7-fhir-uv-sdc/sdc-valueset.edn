@@ -1,27 +1,15 @@
 {ns hl7-fhir-uv-sdc.sdc-valueset,
  import
  #{hl7-fhir-r4-core.rendering-styleSensitive
-   hl7-fhir-r4-core.BackboneElement
-   hl7-fhir-r4-core.canonical
-   hl7-fhir-r4-core.markdown
-   hl7-fhir-r4-core.code
    zen.fhir
    hl7-fhir-r4-core.valueset-expansionSource
    hl7-fhir-r4-core.valueset-conceptOrder
-   hl7-fhir-r4-core.UsageContext
-   hl7-fhir-r4-core.boolean
-   hl7-fhir-r4-core.dateTime
-   hl7-fhir-r4-core.string
-   hl7-fhir-r4-core.date
-   hl7-fhir-r4-core.uri
    hl7-fhir-r4-core.ValueSet
-   hl7-fhir-r4-core.Element
-   hl7-fhir-r4-core.CodeableConcept
    hl7-fhir-r4-core.valueset-label
    hl7-fhir-r4-core.rendering-style
    hl7-fhir-r4-core.rendering-xhtml},
  schema
- {:zen.fhir/version "0.6.3",
+ {:zen.fhir/version "0.6.4",
   :confirms #{hl7-fhir-r4-core.ValueSet/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -31,37 +19,23 @@
   :zen/desc
   "Defines how ValueSet is used to reflect code lists found in data element defintions and form definitions to be used within the ONC's Structured Data Capture standard.",
   :keys
-  {:description
-   {:confirms #{hl7-fhir-r4-core.markdown/schema}, :fhir/flags #{:MS}},
+  {:description #:fhir{:flags #{:MS}},
    :compose
-   {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-    :type zen/map,
+   {:type zen/map,
     :keys
-    {:lockedDate
-     {:confirms #{hl7-fhir-r4-core.date/schema}, :fhir/flags #{:MS}},
-     :_lockedDate {:confirms #{hl7-fhir-r4-core.Element/schema}},
-     :inactive
-     {:confirms #{hl7-fhir-r4-core.boolean/schema},
-      :fhir/flags #{:MS}},
-     :_inactive {:confirms #{hl7-fhir-r4-core.Element/schema}},
+    {:lockedDate #:fhir{:flags #{:MS}},
+     :inactive #:fhir{:flags #{:MS}},
      :include
      {:type zen/vector,
       :every
-      {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
-       {:system
-        {:confirms #{hl7-fhir-r4-core.uri/schema}, :fhir/flags #{:MS}},
-        :_system {:confirms #{hl7-fhir-r4-core.Element/schema}},
-        :version
-        {:confirms #{hl7-fhir-r4-core.string/schema},
-         :fhir/flags #{:MS}},
-        :_version {:confirms #{hl7-fhir-r4-core.Element/schema}},
+       {:system #:fhir{:flags #{:MS}},
+        :version #:fhir{:flags #{:MS}},
         :concept
         {:type zen/vector,
          :every
-         {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-          :type zen/map,
+         {:type zen/map,
           :keys
           {:conceptLabel
            {:confirms #{hl7-fhir-r4-core.valueset-label/schema},
@@ -87,16 +61,10 @@
             :fhir/extensionUri
             "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
             :fhir/flags #{:MS}},
-           :code
-           {:confirms #{hl7-fhir-r4-core.code/schema},
-            :fhir/flags #{:MS}},
-           :_code {:confirms #{hl7-fhir-r4-core.Element/schema}},
-           :display
-           {:confirms #{hl7-fhir-r4-core.string/schema},
-            :fhir/flags #{:MS}},
+           :code #:fhir{:flags #{:MS}},
+           :display #:fhir{:flags #{:MS}},
            :_display
-           {:confirms #{hl7-fhir-r4-core.Element/schema},
-            :type zen/map,
+           {:type zen/map,
             :keys
             {:codeDisplay-renderingStyle
              {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -109,8 +77,7 @@
            :designation
            {:type zen/vector,
             :every
-            {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-             :type zen/map,
+            {:type zen/map,
              :keys
              {:designation-renderingStyle
               {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -124,30 +91,14 @@
         :filter
         {:type zen/vector,
          :every
-         {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-          :type zen/map,
+         {:type zen/map,
           :keys
-          {:property
-           {:confirms #{hl7-fhir-r4-core.code/schema},
-            :fhir/flags #{:MS}},
-           :_property {:confirms #{hl7-fhir-r4-core.Element/schema}},
-           :op
-           {:confirms #{hl7-fhir-r4-core.code/schema},
-            :fhir/flags #{:MS}},
-           :_op {:confirms #{hl7-fhir-r4-core.Element/schema}},
-           :value
-           {:confirms #{hl7-fhir-r4-core.string/schema},
-            :fhir/flags #{:MS}},
-           :_value {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+          {:property #:fhir{:flags #{:MS}},
+           :op #:fhir{:flags #{:MS}},
+           :value #:fhir{:flags #{:MS}}},
           :fhir/flags #{:MS}}},
-        :valueSet
-        {:type zen/vector,
-         :every
-         {:confirms #{hl7-fhir-r4-core.canonical/schema},
-          :fhir/flags #{:MS}}},
-        :_valueSet
-        {:type zen/vector,
-         :every {:confirms #{hl7-fhir-r4-core.Element/schema}}}},
+        :valueSet {:type zen/vector, :every #:fhir{:flags #{:MS}}},
+        :_valueSet {:type zen/vector, :every {}}},
        :fhir/flags #{:MS}}},
      :exclude {:type zen/vector, :every #:fhir{:flags #{:MS}}}},
     :fhir/flags #{:MS}},
@@ -156,59 +107,34 @@
     :fhir/extensionUri
     "http://hl7.org/fhir/StructureDefinition/rendering-styleSensitive",
     :fhir/flags #{:MS}},
-   :date
-   {:confirms #{hl7-fhir-r4-core.dateTime/schema}, :fhir/flags #{:MS}},
-   :jurisdiction
-   {:type zen/vector,
-    :every {:confirms #{hl7-fhir-r4-core.CodeableConcept/schema}}},
-   :_date {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :_status {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :_experimental {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :useContext
-   {:type zen/vector,
-    :every {:confirms #{hl7-fhir-r4-core.UsageContext/schema}}},
-   :experimental
-   {:confirms #{hl7-fhir-r4-core.boolean/schema}, :fhir/flags #{:MS}},
+   :date #:fhir{:flags #{:MS}},
+   :jurisdiction {:type zen/vector, :every {}},
+   :useContext {:type zen/vector, :every {}},
+   :experimental #:fhir{:flags #{:MS}},
    :expansion
-   {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-    :type zen/map,
+   {:type zen/map,
     :keys
     {:expansionSource
      {:confirms #{hl7-fhir-r4-core.valueset-expansionSource/schema},
       :fhir/extensionUri
       "http://hl7.org/fhir/StructureDefinition/valueset-expansionSource"},
-     :identifier
-     {:confirms #{hl7-fhir-r4-core.uri/schema}, :fhir/flags #{:MS}},
-     :_identifier {:confirms #{hl7-fhir-r4-core.Element/schema}},
-     :timestamp
-     {:confirms #{hl7-fhir-r4-core.dateTime/schema},
-      :fhir/flags #{:MS}},
-     :_timestamp {:confirms #{hl7-fhir-r4-core.Element/schema}},
+     :identifier #:fhir{:flags #{:MS}},
+     :timestamp #:fhir{:flags #{:MS}},
      :contains
      {:type zen/vector,
       :every
-      {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
-       {:_code {:confirms #{hl7-fhir-r4-core.Element/schema}},
-        :system
-        {:confirms #{hl7-fhir-r4-core.uri/schema}, :fhir/flags #{:MS}},
+       {:system #:fhir{:flags #{:MS}},
         :contains {:type zen/vector, :every #:fhir{:flags #{:MS}}},
         :conceptConceptOrder
         {:confirms #{hl7-fhir-r4-core.valueset-conceptOrder/schema},
          :fhir/extensionUri
          "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
          :fhir/flags #{:MS}},
-        :abstract
-        {:confirms #{hl7-fhir-r4-core.boolean/schema},
-         :fhir/flags #{:MS}},
-        :_abstract {:confirms #{hl7-fhir-r4-core.Element/schema}},
-        :code
-        {:confirms #{hl7-fhir-r4-core.code/schema},
-         :fhir/flags #{:MS}},
-        :display
-        {:confirms #{hl7-fhir-r4-core.string/schema},
-         :fhir/flags #{:MS}},
+        :abstract #:fhir{:flags #{:MS}},
+        :code #:fhir{:flags #{:MS}},
+        :display #:fhir{:flags #{:MS}},
         :expansionLabel
         {:confirms #{hl7-fhir-r4-core.valueset-label/schema},
          :fhir/extensionUri
@@ -244,14 +170,9 @@
              {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
               :fhir/extensionUri
               "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}}}},
-        :_system {:confirms #{hl7-fhir-r4-core.Element/schema}},
-        :version
-        {:confirms #{hl7-fhir-r4-core.string/schema},
-         :fhir/flags #{:MS}},
-        :_version {:confirms #{hl7-fhir-r4-core.Element/schema}},
+        :version #:fhir{:flags #{:MS}},
         :_display
-        {:confirms #{hl7-fhir-r4-core.Element/schema},
-         :type zen/map,
+        {:type zen/map,
          :keys
          {:expansionDisplay-renderingStyle
           {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
@@ -263,12 +184,7 @@
            "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
        :fhir/flags #{:MS}}}},
     :fhir/flags #{:MS}},
-   :_description {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :status
-   {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}},
-   :_immutable {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :url {:confirms #{hl7-fhir-r4-core.uri/schema}, :fhir/flags #{:MS}},
-   :immutable
-   {:confirms #{hl7-fhir-r4-core.boolean/schema}, :fhir/flags #{:MS}},
-   :_url {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+   :status #:fhir{:flags #{:MS}},
+   :url #:fhir{:flags #{:MS}},
+   :immutable #:fhir{:flags #{:MS}}},
   :zen.fhir/type "ValueSet"}}

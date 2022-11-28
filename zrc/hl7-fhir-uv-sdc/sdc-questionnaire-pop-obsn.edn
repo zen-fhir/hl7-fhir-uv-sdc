@@ -1,9 +1,7 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-pop-obsn,
  import
- #{hl7-fhir-r4-core.BackboneElement
-   zen.fhir
+ #{zen.fhir
    hl7-fhir-uv-sdc.sdc-questionnaire-observationLinkPeriod
-   hl7-fhir-r4-core.Coding
    hl7-fhir-r4-core.questionnaire-unit
    hl7-fhir-uv-sdc.sdc-questionnaire
    hl7-fhir-uv-sdc.sdc-questionnaire-isSubject},
@@ -14,7 +12,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
@@ -22,8 +20,7 @@
   {:item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
      {:observationLinkPeriod
       {:confirms
@@ -40,8 +37,4 @@
       {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema},
        :fhir/extensionUri
        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject"},
-      :code
-      {:type zen/vector,
-       :every
-       {:confirms #{hl7-fhir-r4-core.Coding/schema},
-        :fhir/flags #{:MS}}}}}}}}}
+      :code {:type zen/vector, :every #:fhir{:flags #{:MS}}}}}}}}}

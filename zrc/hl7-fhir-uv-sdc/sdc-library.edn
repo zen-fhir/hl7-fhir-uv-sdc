@@ -1,16 +1,5 @@
 {ns hl7-fhir-uv-sdc.sdc-library,
- import
- #{hl7-fhir-r4-core.ParameterDefinition
-   hl7-fhir-r4-core.code
-   hl7-fhir-r4-core.url
-   zen.fhir
-   hl7-fhir-r4-core.string
-   hl7-fhir-r4-core.RelatedArtifact
-   hl7-fhir-r4-core.cqllibrary
-   hl7-fhir-r4-core.Attachment
-   hl7-fhir-r4-core.base64Binary
-   hl7-fhir-r4-core.DataRequirement
-   hl7-fhir-r4-core.Element},
+ import #{zen.fhir hl7-fhir-r4-core.cqllibrary},
  schema
  {:zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen/desc
@@ -18,7 +7,7 @@
   :zen.fhir/type "Library",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-library",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms #{zen.fhir/Resource hl7-fhir-r4-core.cqllibrary/schema},
   :type zen/map,
   :keys
@@ -26,28 +15,13 @@
    :relatedArtifact
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.RelatedArtifact/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
-     {:display
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}},
-      :_display {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :url
-      {:confirms #{hl7-fhir-r4-core.url/schema}, :fhir/flags #{:MS}},
-      :_url {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+     {:display #:fhir{:flags #{:MS}}, :url #:fhir{:flags #{:MS}}},
      :require #{:url :display},
      :fhir/flags #{:MS}}},
-   :parameter
-   {:type zen/vector,
-    :every
-    {:confirms #{hl7-fhir-r4-core.ParameterDefinition/schema},
-     :fhir/flags #{:MS}}},
-   :dataRequirement
-   {:type zen/vector,
-    :every
-    {:confirms #{hl7-fhir-r4-core.DataRequirement/schema},
-     :fhir/flags #{:MS}}},
+   :parameter {:type zen/vector, :every #:fhir{:flags #{:MS}}},
+   :dataRequirement {:type zen/vector, :every #:fhir{:flags #{:MS}}},
    :content
    {:slicing
     {:slices
@@ -59,12 +33,7 @@
         {:type zen/map,
          :keys
          {:contentType
-          {:const {:value "text/cql"},
-           :confirms #{hl7-fhir-r4-core.code/schema},
-           :fhir/flags #{:MS}},
-          :_contentType {:confirms #{hl7-fhir-r4-core.Element/schema}},
-          :data {:confirms #{hl7-fhir-r4-core.base64Binary/schema}},
-          :_data {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+          {:const {:value "text/cql"}, :fhir/flags #{:MS}}},
          :require #{:contentType :data}}},
        :filter {:engine :match, :match {:contentType "text/cql"}}},
       "fhirpathContent"
@@ -75,12 +44,7 @@
         {:type zen/map,
          :keys
          {:contentType
-          {:const {:value "text/fhirpath"},
-           :confirms #{hl7-fhir-r4-core.code/schema},
-           :fhir/flags #{:MS}},
-          :_contentType {:confirms #{hl7-fhir-r4-core.Element/schema}},
-          :data {:confirms #{hl7-fhir-r4-core.base64Binary/schema}},
-          :_data {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+          {:const {:value "text/fhirpath"}, :fhir/flags #{:MS}}},
          :require #{:contentType :data}}},
        :filter
        {:engine :match, :match {:contentType "text/fhirpath"}}},
@@ -93,16 +57,10 @@
          :keys
          {:contentType
           {:const {:value "application/x-fhir-query"},
-           :confirms #{hl7-fhir-r4-core.code/schema},
-           :fhir/flags #{:MS}},
-          :_contentType {:confirms #{hl7-fhir-r4-core.Element/schema}},
-          :data {:confirms #{hl7-fhir-r4-core.base64Binary/schema}},
-          :_data {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+           :fhir/flags #{:MS}}},
          :require #{:contentType :data}}},
        :filter
        {:engine :match,
         :match {:contentType "application/x-fhir-query"}}}}},
     :type zen/vector,
-    :every
-    {:confirms #{hl7-fhir-r4-core.Attachment/schema},
-     :fhir/flags #{:MS}}}}}}
+    :every #:fhir{:flags #{:MS}}}}}}

@@ -2,14 +2,11 @@
  import
  #{hl7-fhir-uv-sdc.sdc-questionnaire-launchContext
    hl7-fhir-uv-sdc.sdc-questionnaire-initialExpression
-   hl7-fhir-r4-core.BackboneElement
    hl7-fhir-uv-sdc.sdc-questionnaire-calculatedExpression
    hl7-fhir-r4-core.cqf-calculatedValue
-   hl7-fhir-r4-core.canonical
    hl7-fhir-r4-core.questionnaire-constraint
    hl7-fhir-r4-core.minValue
    hl7-fhir-r4-core.maxSize
-   hl7-fhir-r4-core.code
    hl7-fhir-r4-core.maxDecimalPlaces
    hl7-fhir-r4-core.questionnaire-referenceResource
    zen.fhir
@@ -18,8 +15,6 @@
    hl7-fhir-uv-sdc.sdc-questionnaire-answerOptionsToggleExpression
    hl7-fhir-r4-core.questionnaire-referenceProfile
    hl7-fhir-r4-core.maxValue
-   hl7-fhir-r4-core.boolean
-   hl7-fhir-r4-core.string
    hl7-fhir-r4-core.mimeType
    hl7-fhir-uv-sdc.sdc-questionnaire-unitOpen
    hl7-fhir-r4-core.questionnaire-unitOption
@@ -33,7 +28,6 @@
    hl7-fhir-uv-sdc.sdc-questionnaire-endpoint
    hl7-fhir-uv-sdc.sdc-questionnaire-minQuantity
    hl7-fhir-r4-core.cqf-expression
-   hl7-fhir-r4-core.Element
    hl7-fhir-uv-sdc.sdc-questionnaire-answerExpression
    hl7-fhir-uv-sdc.sdc-questionnaire-unitSupplementalSystem
    hl7-fhir-uv-sdc.sdc-questionnaire
@@ -51,7 +45,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
@@ -103,8 +97,7 @@
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
      {:answerOptionsToggleExpression
       {:type zen/vector,
@@ -114,8 +107,7 @@
         :fhir/extensionUri
         "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerOptionsToggleExpression",
         :fhir/flags #{:MS}}},
-      :enableBehavior
-      {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}},
+      :enableBehavior #:fhir{:flags #{:MS}},
       :minQuantity
       {:confirms
        #{hl7-fhir-uv-sdc.sdc-questionnaire-minQuantity/schema},
@@ -153,7 +145,6 @@
         #{hl7-fhir-r4-core.questionnaire-referenceProfile/schema},
         :fhir/extensionUri
         "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile"}},
-      :repeats {:confirms #{hl7-fhir-r4-core.boolean/schema}},
       :candidateExpression
       {:confirms
        #{hl7-fhir-uv-sdc.sdc-questionnaire-candidateExpression/schema},
@@ -230,26 +221,16 @@
       :enableWhen
       {:type zen/vector,
        :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :type zen/map,
+       {:type zen/map,
         :keys
-        {:question
-         {:confirms #{hl7-fhir-r4-core.string/schema},
-          :fhir/flags #{:MS}},
-         :_question {:confirms #{hl7-fhir-r4-core.Element/schema}},
-         :operator
-         {:confirms #{hl7-fhir-r4-core.code/schema},
-          :fhir/flags #{:MS}},
-         :_operator {:confirms #{hl7-fhir-r4-core.Element/schema}},
+        {:question #:fhir{:flags #{:MS}},
+         :operator #:fhir{:flags #{:MS}},
          :answer #:fhir{:polymorphic true, :flags #{:MS}}}}},
       :_required
-      {:confirms #{hl7-fhir-r4-core.Element/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
-       {:value {:confirms #{hl7-fhir-r4-core.boolean/schema}},
-        :_value
-        {:confirms #{hl7-fhir-r4-core.Element/schema},
-         :type zen/map,
+       {:_value
+        {:type zen/map,
          :keys
          {:requiredExpression
           {:confirms #{hl7-fhir-r4-core.cqf-expression/schema},
@@ -259,8 +240,7 @@
       :answerOption
       {:type zen/vector,
        :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :type zen/map,
+       {:type zen/map,
         :keys
         {:optionExclusive
          {:confirms
@@ -282,13 +262,10 @@
        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerExpression",
        :fhir/flags #{:MS}},
       :_readOnly
-      {:confirms #{hl7-fhir-r4-core.Element/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
-       {:value {:confirms #{hl7-fhir-r4-core.boolean/schema}},
-        :_value
-        {:confirms #{hl7-fhir-r4-core.Element/schema},
-         :type zen/map,
+       {:_value
+        {:type zen/map,
          :keys
          {:readOnlyExpression
           {:confirms #{hl7-fhir-r4-core.cqf-expression/schema},
@@ -315,7 +292,6 @@
            "http://hl7.org/fhir/StructureDefinition/cqf-expression",
            :fhir/flags #{:MS}}}}},
        :fhir/flags #{:MS}},
-      :readOnly {:confirms #{hl7-fhir-r4-core.boolean/schema}},
       :itemMinOccurs
       {:confirms #{hl7-fhir-r4-core.questionnaire-minOccurs/schema},
        :fhir/extensionUri
@@ -336,7 +312,6 @@
            "http://hl7.org/fhir/StructureDefinition/cqf-expression",
            :fhir/flags #{:MS}}}}},
        :fhir/flags #{:MS}},
-      :answerValueSet {:confirms #{hl7-fhir-r4-core.canonical/schema}},
       :mimeType
       {:type zen/vector,
        :every
@@ -344,15 +319,11 @@
         :fhir/extensionUri
         "http://hl7.org/fhir/StructureDefinition/mimeType",
         :fhir/flags #{:MS}}},
-      :_text {:confirms #{hl7-fhir-r4-core.Element/schema}},
       :_answerValueSet
-      {:confirms #{hl7-fhir-r4-core.Element/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
-       {:value {:confirms #{hl7-fhir-r4-core.canonical/schema}},
-        :_value
-        {:confirms #{hl7-fhir-r4-core.Element/schema},
-         :type zen/map,
+       {:_value
+        {:type zen/map,
          :keys
          {:answerValueSetExpression
           {:confirms #{hl7-fhir-r4-core.cqf-expression/schema},
@@ -395,20 +366,16 @@
        :fhir/extensionUri
        "http://hl7.org/fhir/StructureDefinition/maxSize"},
       :_repeats
-      {:confirms #{hl7-fhir-r4-core.Element/schema},
-       :type zen/map,
+      {:type zen/map,
        :keys
-       {:value {:confirms #{hl7-fhir-r4-core.boolean/schema}},
-        :_value
-        {:confirms #{hl7-fhir-r4-core.Element/schema},
-         :type zen/map,
+       {:_value
+        {:type zen/map,
          :keys
          {:repeatsExpression
           {:confirms #{hl7-fhir-r4-core.cqf-expression/schema},
            :fhir/extensionUri
            "http://hl7.org/fhir/StructureDefinition/cqf-expression",
            :fhir/flags #{:MS}}}}}},
-      :_enableBehavior {:confirms #{hl7-fhir-r4-core.Element/schema}},
       :unitOption
       {:type zen/vector,
        :every
@@ -416,12 +383,10 @@
         :fhir/extensionUri
         "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
         :fhir/flags #{:MS}}},
-      :required {:confirms #{hl7-fhir-r4-core.boolean/schema}},
       :itemSignatureRequired
       {:type zen/vector,
        :every
        {:confirms
         #{hl7-fhir-r4-core.questionnaire-signatureRequired/schema},
         :fhir/extensionUri
-        "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired"}},
-      :text {:confirms #{hl7-fhir-r4-core.string/schema}}}}}}}}
+        "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired"}}}}}}}}

@@ -2,17 +2,10 @@
  import
  #{hl7-fhir-uv-sdc.sdc-questionnaire-questionnaireAdaptive
    hl7-fhir-r4-core.questionnaire-hidden
-   hl7-fhir-r4-core.BackboneElement
-   hl7-fhir-r4-core.canonical
-   hl7-fhir-r4-core.code
    zen.fhir
-   hl7-fhir-r4-core.boolean
-   hl7-fhir-r4-core.string
-   hl7-fhir-r4-core.uri
-   hl7-fhir-r4-core.Questionnaire
-   hl7-fhir-r4-core.Element},
+   hl7-fhir-r4-core.Questionnaire},
  schema
- {:zen.fhir/version "0.6.3",
+ {:zen.fhir/version "0.6.4",
   :confirms #{hl7-fhir-r4-core.Questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -25,48 +18,29 @@
   {:derivedFrom
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.canonical/schema},
-     :fhir/flags #{:MS},
+    {:fhir/flags #{:MS},
      :zen/desc
      "Base Questionnaire this adaptive instance is drivenen from"},
     :minItems 1,
     :maxItems 1},
-   :_derivedFrom
-   {:type zen/vector,
-    :every {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+   :_derivedFrom {:type zen/vector, :every {}},
    :item
    {:type zen/vector,
     :every
-    {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-     :type zen/map,
+    {:type zen/map,
      :keys
-     {:linkId
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}},
-      :repeats
-      {:confirms #{hl7-fhir-r4-core.boolean/schema},
-       :fhir/flags #{:MS}},
-      :_prefix {:confirms #{hl7-fhir-r4-core.Element/schema}},
+     {:linkId #:fhir{:flags #{:MS}},
+      :repeats #:fhir{:flags #{:MS}},
       :item {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-      :_type {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :type
-      {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}},
-      :_linkId {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :_required {:confirms #{hl7-fhir-r4-core.Element/schema}},
+      :type #:fhir{:flags #{:MS}},
       :answerOption
       {:type zen/vector,
        :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :type zen/map,
+       {:type zen/map,
         :keys {:value #:fhir{:polymorphic true, :flags #{:MS}}},
         :fhir/flags #{:MS}}},
-      :prefix
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}},
-      :_readOnly {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :readOnly
-      {:confirms #{hl7-fhir-r4-core.boolean/schema},
-       :fhir/flags #{:MS}},
+      :prefix #:fhir{:flags #{:MS}},
+      :readOnly #:fhir{:flags #{:MS}},
       :hidden
       {:confirms #{hl7-fhir-r4-core.questionnaire-hidden/schema},
        :fhir/extensionUri
@@ -75,35 +49,20 @@
       :initial
       {:type zen/vector,
        :every
-       {:confirms #{hl7-fhir-r4-core.BackboneElement/schema},
-        :type zen/map,
+       {:type zen/map,
         :keys {:value #:fhir{:polymorphic true, :flags #{:MS}}},
         :fhir/flags #{:MS}}},
-      :_text {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :_repeats {:confirms #{hl7-fhir-r4-core.Element/schema}},
-      :required
-      {:confirms #{hl7-fhir-r4-core.boolean/schema},
-       :fhir/flags #{:MS}},
-      :text
-      {:confirms #{hl7-fhir-r4-core.string/schema},
-       :fhir/flags #{:MS}}},
+      :required #:fhir{:flags #{:MS}},
+      :text #:fhir{:flags #{:MS}}},
      :require #{:text},
      :fhir/flags #{:MS}}},
-   :_status {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :title
-   {:confirms #{hl7-fhir-r4-core.string/schema}, :fhir/flags #{:MS}},
+   :title #:fhir{:flags #{:MS}},
    :questionnaireAdaptive
    {:confirms
     #{hl7-fhir-uv-sdc.sdc-questionnaire-questionnaireAdaptive/schema},
     :fhir/extensionUri
     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive",
     :fhir/flags #{:MS}},
-   :status
-   {:confirms #{hl7-fhir-r4-core.code/schema}, :fhir/flags #{:MS}},
-   :url {:confirms #{hl7-fhir-r4-core.uri/schema}},
-   :_title {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :version
-   {:confirms #{hl7-fhir-r4-core.string/schema}, :fhir/flags #{:MS}},
-   :_version {:confirms #{hl7-fhir-r4-core.Element/schema}},
-   :_url {:confirms #{hl7-fhir-r4-core.Element/schema}}},
+   :status #:fhir{:flags #{:MS}},
+   :version #:fhir{:flags #{:MS}}},
   :zen.fhir/type "Questionnaire"}}

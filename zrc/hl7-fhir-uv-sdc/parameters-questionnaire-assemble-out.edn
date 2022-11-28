@@ -1,13 +1,9 @@
 {ns hl7-fhir-uv-sdc.parameters-questionnaire-assemble-out,
  import
  #{hl7-fhir-r4-core.OperationOutcome
-   hl7-fhir-r4-core.BackboneElement
    zen.fhir
-   hl7-fhir-r4-core.string
-   hl7-fhir-r4-core.Element
    hl7-fhir-r4-core.Parameters
-   hl7-fhir-uv-sdc.sdc-questionnaire
-   hl7-fhir-r4-core.Resource},
+   hl7-fhir-uv-sdc.sdc-questionnaire},
  schema
  {:zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen/desc
@@ -15,7 +11,7 @@
   :zen.fhir/type "Parameters",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-assemble-out",
-  :zen.fhir/version "0.6.3",
+  :zen.fhir/version "0.6.4",
   :confirms #{zen.fhir/Resource hl7-fhir-r4-core.Parameters/schema},
   :type zen/map,
   :keys
@@ -30,15 +26,10 @@
         :every
         {:type zen/map,
          :keys
-         {:name
-          {:const {:value "return"},
-           :confirms #{hl7-fhir-r4-core.string/schema}},
-          :_name {:confirms #{hl7-fhir-r4-core.Element/schema}},
+         {:name {:const {:value "return"}},
           :value #:fhir{:polymorphic true},
           :resource
-          {:confirms
-           #{hl7-fhir-r4-core.Resource/schema
-             hl7-fhir-uv-sdc.sdc-questionnaire/schema},
+          {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema},
            :zen.fhir/nested {}},
           :part {:type zen/vector, :every {}, :maxItems 0}}}},
        :filter {:engine :match, :match {:name "return"}}},
@@ -49,17 +40,12 @@
         :every
         {:type zen/map,
          :keys
-         {:name
-          {:const {:value "outcome"},
-           :confirms #{hl7-fhir-r4-core.string/schema}},
-          :_name {:confirms #{hl7-fhir-r4-core.Element/schema}},
+         {:name {:const {:value "outcome"}},
           :value #:fhir{:polymorphic true},
           :resource
-          {:confirms
-           #{hl7-fhir-r4-core.OperationOutcome/schema
-             hl7-fhir-r4-core.Resource/schema},
+          {:confirms #{hl7-fhir-r4-core.OperationOutcome/schema},
            :zen.fhir/nested {}},
           :part {:type zen/vector, :every {}, :maxItems 0}}}},
        :filter {:engine :match, :match {:name "outcome"}}}}},
     :type zen/vector,
-    :every {:confirms #{hl7-fhir-r4-core.BackboneElement/schema}}}}}}
+    :every {}}}}}
