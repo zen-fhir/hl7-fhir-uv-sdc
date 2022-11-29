@@ -6,7 +6,7 @@
    hl7-fhir-r4-core.QuestionnaireResponse
    hl7-fhir-r4-core.Task},
  schema
- {:zen.fhir/version "0.6.4",
+ {:zen.fhir/version "0.6.5",
   :confirms #{zen.fhir/Resource hl7-fhir-r4-core.Task/schema},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -19,7 +19,8 @@
   {:reasonCode #:fhir{:flags #{:MS}},
    :authoredOn #:fhir{:flags #{:MS}},
    :output
-   {:slicing
+   {:type zen/vector,
+    :slicing
     {:slices
      {"response"
       {:schema
@@ -53,7 +54,6 @@
          {:coding
           #{{:system "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
              :code "questionnaire-response"}}}}}}}},
-    :type zen/vector,
     :every #:fhir{:flags #{:MS}}},
    :for
    {:fhir/flags #{:MS},
@@ -77,7 +77,8 @@
     :zen.fhir/reference
     {:refers #{hl7-fhir-uv-sdc.sdc-servicerequest/schema}}},
    :input
-   {:slicing
+   {:type zen/vector,
+    :slicing
     {:slices
      {"questionnaire"
       {:schema
@@ -94,8 +95,6 @@
            :fhir/flags #{:MS}},
           :value
           {:fhir/polymorphic true,
-           :type zen/map,
-           :keys {},
            :fhir/flags #{:MS},
            :zen/desc "url"}},
          :require #{:value :type}}},
@@ -120,8 +119,6 @@
            :fhir/flags #{:MS}},
           :value
           {:fhir/polymorphic true,
-           :type zen/map,
-           :keys {},
            :fhir/flags #{:MS},
            :zen/desc "url"}},
          :require #{:value :type}}},
@@ -132,7 +129,6 @@
          {:coding
           #{{:system "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
              :code "response-endpoint"}}}}}}}},
-    :type zen/vector,
     :every #:fhir{:flags #{:MS}}},
    :owner
    {:fhir/flags #{:MS},

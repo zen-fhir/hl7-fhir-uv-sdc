@@ -1,12 +1,7 @@
 {ns hl7-fhir-uv-sdc.sdc-usagecontext,
- import
- #{zen.fhir
-   hl7-fhir-r4-core.UsageContext
-   hl7-fhir-r4-core.Range
-   hl7-fhir-r4-core.Coding
-   hl7-fhir-r4-core.Quantity},
+ import #{zen.fhir hl7-fhir-r4-core.UsageContext},
  schema
- {:zen.fhir/version "0.6.4",
+ {:zen.fhir/version "0.6.5",
   :confirms #{hl7-fhir-r4-core.UsageContext/schema},
   :zen/tags #{zen/schema zen.fhir/structure-schema},
   :zen.fhir/profileUri
@@ -16,20 +11,12 @@
   "Constraints on the codes and values of UsageContext to help ensure consistent usage in SDC Questionnaires",
   :fhir/flags #{:MS},
   :keys
-  {:code
-   {:confirms #{hl7-fhir-r4-core.Coding/schema}, :fhir/flags #{:MS}},
+  {:code #:fhir{:flags #{:MS}},
    :value
    {:type zen/map,
     :keys
     {:Range
-     {:confirms #{hl7-fhir-r4-core.Range/schema},
-      :type zen/map,
-      :keys
-      {:low
-       {:confirms #{hl7-fhir-r4-core.Quantity/schema},
-        :fhir/flags #{:MS}},
-       :high
-       {:confirms #{hl7-fhir-r4-core.Quantity/schema},
-        :fhir/flags #{:MS}}},
+     {:type zen/map,
+      :keys {:low #:fhir{:flags #{:MS}}, :high #:fhir{:flags #{:MS}}},
       :fhir/flags #{:MS}}}}},
   :zen.fhir/type "UsageContext"}}

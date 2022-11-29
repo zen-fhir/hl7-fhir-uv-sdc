@@ -6,7 +6,7 @@
    hl7-fhir-r4-core.rendering-style
    hl7-fhir-r4-core.rendering-xhtml},
  schema
- {:zen.fhir/version "0.6.4",
+ {:zen.fhir/version "0.6.5",
   :confirms #{hl7-fhir-r4-core.CodeSystem/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -23,9 +23,7 @@
     "http://hl7.org/fhir/StructureDefinition/rendering-styleSensitive",
     :fhir/flags #{:MS}},
    :date #:fhir{:flags #{:MS}},
-   :jurisdiction {:type zen/vector, :every {}},
    :content #:fhir{:flags #{:MS}},
-   :useContext {:type zen/vector, :every {}},
    :experimental #:fhir{:flags #{:MS}},
    :status #:fhir{:flags #{:MS}},
    :url #:fhir{:flags #{:MS}},

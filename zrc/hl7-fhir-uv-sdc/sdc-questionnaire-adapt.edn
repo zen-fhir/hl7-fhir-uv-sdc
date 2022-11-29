@@ -5,7 +5,7 @@
    zen.fhir
    hl7-fhir-r4-core.Questionnaire},
  schema
- {:zen.fhir/version "0.6.4",
+ {:zen.fhir/version "0.6.5",
   :confirms #{hl7-fhir-r4-core.Questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -23,7 +23,6 @@
      "Base Questionnaire this adaptive instance is drivenen from"},
     :minItems 1,
     :maxItems 1},
-   :_derivedFrom {:type zen/vector, :every {}},
    :item
    {:type zen/vector,
     :every

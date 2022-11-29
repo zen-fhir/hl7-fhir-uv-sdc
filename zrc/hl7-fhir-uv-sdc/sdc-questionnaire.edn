@@ -7,7 +7,7 @@
    hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer
    hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation},
  schema
- {:zen.fhir/version "0.6.4",
+ {:zen.fhir/version "0.6.5",
   :confirms #{hl7-fhir-r4-core.Questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -75,7 +75,6 @@
     :fhir/extensionUri
     "http://hl7.org/fhir/StructureDefinition/designNote"},
    :version #:fhir{:flags #{:MS}},
-   :_subjectType {:type zen/vector, :every {}},
    :terminologyServer
    {:type zen/vector,
     :every

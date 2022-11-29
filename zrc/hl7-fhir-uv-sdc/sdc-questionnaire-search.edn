@@ -6,7 +6,7 @@
    hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
    hl7-fhir-uv-sdc.sdc-questionnaire},
  schema
- {:zen.fhir/version "0.6.4",
+ {:zen.fhir/version "0.6.5",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -25,12 +25,8 @@
     :fhir/extensionUri
     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"},
    :publisher #:fhir{:flags #{:MS}},
-   :jurisdiction {:type zen/vector, :every {}, :maxItems 1},
+   :jurisdiction {:type zen/vector, :maxItems 1},
    :purpose #:fhir{:flags #{:MS}},
-   :item
-   {:type zen/vector,
-    :every
-    {:type zen/map, :keys {:code {:type zen/vector, :every {}}}}},
    :useContext
    {:type zen/vector,
     :every
