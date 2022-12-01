@@ -4,7 +4,7 @@
    hl7-fhir-r4-core.Patient
    hl7-fhir-r4-core.QuestionnaireResponse},
  schema
- {:zen.fhir/version "0.6.5",
+ {:zen.fhir/version "0.6.6",
   :confirms
   #{hl7-fhir-r4-core.QuestionnaireResponse/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -29,6 +29,7 @@
         :keys
         {:value
          {:fhir/polymorphic true,
+          :type zen/map,
           :exclusive-keys
           #{#{:date
               :time
@@ -42,7 +43,6 @@
               :Quantity
               :boolean
               :Reference}},
-          :type zen/map,
           :keys
           {:Reference
            {:confirms #{zen.fhir/Reference},

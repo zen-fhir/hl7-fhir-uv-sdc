@@ -5,7 +5,7 @@
    zen.fhir
    hl7-fhir-r4-core.Questionnaire},
  schema
- {:zen.fhir/version "0.6.5",
+ {:zen.fhir/version "0.6.6",
   :confirms #{hl7-fhir-r4-core.Questionnaire/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
   :zen.fhir/profileUri
@@ -36,7 +36,9 @@
       {:type zen/vector,
        :every
        {:type zen/map,
-        :keys {:value #:fhir{:polymorphic true, :flags #{:MS}}},
+        :keys
+        {:value
+         {:fhir/polymorphic true, :type zen/map, :fhir/flags #{:MS}}},
         :fhir/flags #{:MS}}},
       :prefix #:fhir{:flags #{:MS}},
       :readOnly #:fhir{:flags #{:MS}},
@@ -49,7 +51,9 @@
       {:type zen/vector,
        :every
        {:type zen/map,
-        :keys {:value #:fhir{:polymorphic true, :flags #{:MS}}},
+        :keys
+        {:value
+         {:fhir/polymorphic true, :type zen/map, :fhir/flags #{:MS}}},
         :fhir/flags #{:MS}}},
       :required #:fhir{:flags #{:MS}},
       :text #:fhir{:flags #{:MS}}},

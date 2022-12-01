@@ -45,7 +45,7 @@
   :zen.fhir/type "Questionnaire",
   :zen.fhir/profileUri
   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave",
-  :zen.fhir/version "0.6.5",
+  :zen.fhir/version "0.6.6",
   :confirms
   #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
   :type zen/map,
@@ -225,7 +225,10 @@
         :keys
         {:question #:fhir{:flags #{:MS}},
          :operator #:fhir{:flags #{:MS}},
-         :answer #:fhir{:polymorphic true, :flags #{:MS}}}}},
+         :answer
+         {:fhir/polymorphic true,
+          :type zen/map,
+          :fhir/flags #{:MS}}}}},
       :_required
       {:type zen/map,
        :keys
@@ -253,7 +256,8 @@
           :fhir/extensionUri
           "http://hl7.org/fhir/StructureDefinition/ordinalValue",
           :fhir/flags #{:MS}},
-         :value #:fhir{:polymorphic true, :flags #{:MS}}},
+         :value
+         {:fhir/polymorphic true, :type zen/map, :fhir/flags #{:MS}}},
         :require #{:value}}},
       :answerExpression
       {:confirms

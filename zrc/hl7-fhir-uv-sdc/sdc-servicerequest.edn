@@ -4,7 +4,7 @@
    hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire
    hl7-fhir-r4-core.ServiceRequest},
  schema
- {:zen.fhir/version "0.6.5",
+ {:zen.fhir/version "0.6.6",
   :confirms
   #{hl7-fhir-r4-core.ServiceRequest/schema zen.fhir/Resource},
   :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -40,6 +40,7 @@
     :zen/desc "Patient or other Questionnaire is for"},
    :occurrence
    {:fhir/polymorphic true,
+    :type zen/map,
     :fhir/flags #{:MS},
     :zen/desc
     "When (and possibly how often) the Questionnaire needs to be completed"},

@@ -1,7 +1,7 @@
 {ns hl7-fhir-uv-sdc.sdc-usagecontext,
  import #{zen.fhir hl7-fhir-r4-core.UsageContext},
  schema
- {:zen.fhir/version "0.6.5",
+ {:zen.fhir/version "0.6.6",
   :confirms #{hl7-fhir-r4-core.UsageContext/schema},
   :zen/tags #{zen/schema zen.fhir/structure-schema},
   :zen.fhir/profileUri
