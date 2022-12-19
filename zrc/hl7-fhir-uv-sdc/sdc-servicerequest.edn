@@ -1,55 +1,39 @@
 {ns hl7-fhir-uv-sdc.sdc-servicerequest,
- import
- #{zen.fhir
-   hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire
-   hl7-fhir-r4-core.ServiceRequest},
- schema
- {:zen.fhir/version "0.6.6-7",
-  :confirms
-  #{hl7-fhir-r4-core.ServiceRequest/schema zen.fhir/Resource},
-  :zen/tags #{zen.fhir/profile-schema zen/schema},
-  :zen.fhir/profileUri
-  "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest",
-  :require #{:questionnaire :requester :code :subject},
-  :type zen/map,
-  :zen/desc
-  "Defines how ServiceRequest is used to ask for a Questionnaire to be completed",
-  :keys
-  {:questionnaire
-   {:confirms
-    #{hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire/schema},
-    :fhir/extensionUri
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest-questionnaire"},
-   :reasonCode {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-   :requester
-   {:fhir/flags #{:MS},
-    :confirms #{zen.fhir/Reference},
-    :zen.fhir/reference {:refers #{}}},
-   :status #:fhir{:flags #{:MS}},
-   :code
-   {:match
-    {:coding
-     #{{:system "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
-        :code "complete-questionnaire"}}},
-    :fhir/flags #{:MS}},
-   :intent #:fhir{:flags #{:MS}},
-   :subject
-   {:fhir/flags #{:MS},
-    :confirms #{zen.fhir/Reference},
-    :zen.fhir/reference {:refers #{}},
-    :zen/desc "Patient or other Questionnaire is for"},
-   :occurrence
-   {:fhir/polymorphic true,
-    :type zen/map,
-    :fhir/flags #{:MS},
-    :zen/desc
-    "When (and possibly how often) the Questionnaire needs to be completed"},
-   :performer
-   {:type zen/vector,
-    :every
-    {:fhir/flags #{:MS},
-     :confirms #{zen.fhir/Reference},
-     :zen.fhir/reference {:refers #{}},
-     :zen/desc "Who should complete questionnaire"},
-    :maxItems 1}},
-  :zen.fhir/type "ServiceRequest"}}
+ import #{zen.fhir
+          hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire
+          hl7-fhir-r4-core.ServiceRequest},
+ schema {:zen.fhir/version "0.6.6-8",
+         :confirms #{hl7-fhir-r4-core.ServiceRequest/schema
+                     zen.fhir/Resource},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest",
+         :require #{:questionnaire :requester :code :subject},
+         :type zen/map,
+         :zen/desc "Defines how ServiceRequest is used to ask for a Questionnaire to be completed",
+         :keys {:questionnaire {:confirms #{hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire/schema},
+                                :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest-questionnaire"},
+                :reasonCode {:type zen/vector,
+                             :every {:fhir/flags #{:MS}}},
+                :requester {:fhir/flags #{:MS},
+                            :confirms #{zen.fhir/Reference},
+                            :zen.fhir/reference {:refers #{}}},
+                :status {:fhir/flags #{:MS}},
+                :code {:match {:coding #{{:system "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+                                          :code "complete-questionnaire"}}},
+                       :fhir/flags #{:MS}},
+                :intent {:fhir/flags #{:MS}},
+                :subject {:fhir/flags #{:MS},
+                          :confirms #{zen.fhir/Reference},
+                          :zen.fhir/reference {:refers #{}},
+                          :zen/desc "Patient or other Questionnaire is for"},
+                :occurrence {:fhir/polymorphic true,
+                             :type zen/map,
+                             :fhir/flags #{:MS},
+                             :zen/desc "When (and possibly how often) the Questionnaire needs to be completed"},
+                :performer {:type zen/vector,
+                            :every {:fhir/flags #{:MS},
+                                    :confirms #{zen.fhir/Reference},
+                                    :zen.fhir/reference {:refers #{}},
+                                    :zen/desc "Who should complete questionnaire"},
+                            :maxItems 1}},
+         :zen.fhir/type "ServiceRequest"}}

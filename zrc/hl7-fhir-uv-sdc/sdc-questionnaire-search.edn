@@ -1,45 +1,35 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-search,
- import
- #{zen.fhir
-   hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom
-   hl7-fhir-uv-sdc.sdc-usagecontext
-   hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
-   hl7-fhir-uv-sdc.sdc-questionnaire},
- schema
- {:zen.fhir/version "0.6.6-7",
-  :confirms
-  #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
-  :zen/tags #{zen.fhir/profile-schema zen/schema},
-  :zen.fhir/profileUri
-  "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-search",
-  :require #{:date :title},
-  :type zen/map,
-  :zen/desc
-  "Describes the elements that should be exposed in a response to a search for questionnaires.",
-  :keys
-  {:description #:fhir{:flags #{:MS}},
-   :date #:fhir{:flags #{:MS}},
-   :assemble-expectation
-   {:confirms
-    #{hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema},
-    :fhir/extensionUri
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"},
-   :publisher #:fhir{:flags #{:MS}},
-   :jurisdiction {:type zen/vector, :maxItems 1},
-   :purpose #:fhir{:flags #{:MS}},
-   :useContext
-   {:type zen/vector,
-    :every
-    {:confirms #{hl7-fhir-uv-sdc.sdc-usagecontext/schema},
-     :fhir/flags #{:MS}}},
-   :copyright #:fhir{:flags #{:MS}},
-   :experimental #:fhir{:flags #{:MS}},
-   :title #:fhir{:flags #{:MS}},
-   :assembledFrom
-   {:confirms
-    #{hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom/schema},
-    :fhir/extensionUri
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom"},
-   :code {:type zen/vector, :every #:fhir{:flags #{:MS}}, :maxItems 1},
-   :identifier {:type zen/vector, :every #:fhir{:flags #{:MS}}}},
-  :zen.fhir/type "Questionnaire"}}
+ import #{zen.fhir
+          hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom
+          hl7-fhir-uv-sdc.sdc-usagecontext
+          hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
+          hl7-fhir-uv-sdc.sdc-questionnaire},
+ schema {:zen.fhir/version "0.6.6-8",
+         :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
+                     zen.fhir/Resource},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-search",
+         :require #{:date :title},
+         :type zen/map,
+         :zen/desc "Describes the elements that should be exposed in a response to a search for questionnaires.",
+         :keys {:description {:fhir/flags #{:MS}},
+                :date {:fhir/flags #{:MS}},
+                :assemble-expectation {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema},
+                                       :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"},
+                :publisher {:fhir/flags #{:MS}},
+                :jurisdiction {:type zen/vector, :maxItems 1},
+                :purpose {:fhir/flags #{:MS}},
+                :useContext {:type zen/vector,
+                             :every {:confirms #{hl7-fhir-uv-sdc.sdc-usagecontext/schema},
+                                     :fhir/flags #{:MS}}},
+                :copyright {:fhir/flags #{:MS}},
+                :experimental {:fhir/flags #{:MS}},
+                :title {:fhir/flags #{:MS}},
+                :assembledFrom {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom/schema},
+                                :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom"},
+                :code {:type zen/vector,
+                       :every {:fhir/flags #{:MS}},
+                       :maxItems 1},
+                :identifier {:type zen/vector,
+                             :every {:fhir/flags #{:MS}}}},
+         :zen.fhir/type "Questionnaire"}}

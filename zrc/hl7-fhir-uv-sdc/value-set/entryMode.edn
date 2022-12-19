@@ -1,18 +1,14 @@
 {ns hl7-fhir-uv-sdc.value-set.entryMode,
  import #{zen.fhir},
- value-set
- {:zen/tags #{zen.fhir/value-set},
-  :zen/desc
-  "Defines mechanisms of capturing data in a QuestionnaireResponse",
-  :zen.fhir/version "0.6.6-7",
-  :fhir/code-systems
-  #{{:fhir/url "http://hl7.org/fhir/uv/sdc/CodeSystem/entryMode",
-     :zen.fhir/content :bundled}},
-  :uri "http://hl7.org/fhir/uv/sdc/ValueSet/entryMode",
-  :version "3.0.0",
-  :ftr
-  {:module "ig",
-   :source-urls ["node_modules/hl7.fhir.uv.sdc"],
-   :source-type :igs,
-   :ftr-path "ftr",
-   :tag "init"}}}
+ value-set {:zen/tags #{zen.fhir/value-set},
+            :zen/desc "Defines mechanisms of capturing data in a QuestionnaireResponse",
+            :zen.fhir/version "0.6.6-8",
+            :fhir/code-systems #{{:fhir/url "http://hl7.org/fhir/uv/sdc/CodeSystem/entryMode",
+                                  :zen.fhir/content :bundled}},
+            :uri "http://hl7.org/fhir/uv/sdc/ValueSet/entryMode",
+            :version "3.0.0",
+            :ftr {:module "ig",
+                  :source-urls ["node_modules/hl7.fhir.uv.sdc"],
+                  :source-type :igs,
+                  :ftr-path "ftr",
+                  :tag "init"}}}

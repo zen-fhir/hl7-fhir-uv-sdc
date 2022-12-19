@@ -1,20 +1,14 @@
 {ns hl7-fhir-uv-sdc.value-set.questionnaire-answer-constraint,
  import #{zen.fhir},
- value-set
- {:zen/tags #{zen.fhir/value-set},
-  :zen/desc
-  "Codes that describe the types of constraints possible on a question item that has a list of permitted answers [Note: This is a clone of QuestionnaireAnswerConstraint valueset from R5 (adopting R5 capability)]",
-  :zen.fhir/version "0.6.6-7",
-  :fhir/code-systems
-  #{{:fhir/url
-     "http://hl7.org/fhir/uv/sdc/CodeSystem/questionnaire-answer-constraint",
-     :zen.fhir/content :bundled}},
-  :uri
-  "http://hl7.org/fhir/uv/sdc/ValueSet/questionnaire-answer-constraint",
-  :version "3.0.0",
-  :ftr
-  {:module "ig",
-   :source-urls ["node_modules/hl7.fhir.uv.sdc"],
-   :source-type :igs,
-   :ftr-path "ftr",
-   :tag "init"}}}
+ value-set {:zen/tags #{zen.fhir/value-set},
+            :zen/desc "Codes that describe the types of constraints possible on a question item that has a list of permitted answers [Note: This is a clone of QuestionnaireAnswerConstraint valueset from R5 (adopting R5 capability)]",
+            :zen.fhir/version "0.6.6-8",
+            :fhir/code-systems #{{:fhir/url "http://hl7.org/fhir/uv/sdc/CodeSystem/questionnaire-answer-constraint",
+                                  :zen.fhir/content :bundled}},
+            :uri "http://hl7.org/fhir/uv/sdc/ValueSet/questionnaire-answer-constraint",
+            :version "3.0.0",
+            :ftr {:module "ig",
+                  :source-urls ["node_modules/hl7.fhir.uv.sdc"],
+                  :source-type :igs,
+                  :ftr-path "ftr",
+                  :tag "init"}}}

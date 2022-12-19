@@ -1,187 +1,116 @@
 {ns hl7-fhir-uv-sdc.sdc-valueset,
- import
- #{hl7-fhir-r4-core.rendering-styleSensitive
-   zen.fhir
-   hl7-fhir-r4-core.valueset-expansionSource
-   hl7-fhir-r4-core.valueset-conceptOrder
-   hl7-fhir-r4-core.ValueSet
-   hl7-fhir-r4-core.valueset-label
-   hl7-fhir-r4-core.rendering-style
-   hl7-fhir-r4-core.rendering-xhtml},
- schema
- {:zen.fhir/version "0.6.6-7",
-  :confirms #{hl7-fhir-r4-core.ValueSet/schema zen.fhir/Resource},
-  :zen/tags #{zen.fhir/profile-schema zen/schema},
-  :zen.fhir/profileUri
-  "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-valueset",
-  :require #{:immutable},
-  :type zen/map,
-  :zen/desc
-  "Defines how ValueSet is used to reflect code lists found in data element defintions and form definitions to be used within the ONC's Structured Data Capture standard.",
-  :keys
-  {:description #:fhir{:flags #{:MS}},
-   :compose
-   {:type zen/map,
-    :keys
-    {:lockedDate #:fhir{:flags #{:MS}},
-     :inactive #:fhir{:flags #{:MS}},
-     :include
-     {:type zen/vector,
-      :every
-      {:type zen/map,
-       :keys
-       {:system #:fhir{:flags #{:MS}},
-        :version #:fhir{:flags #{:MS}},
-        :concept
-        {:type zen/vector,
-         :every
-         {:type zen/map,
-          :keys
-          {:conceptLabel
-           {:confirms #{hl7-fhir-r4-core.valueset-label/schema},
-            :fhir/extensionUri
-            "http://hl7.org/fhir/StructureDefinition/valueset-label",
-            :type zen/map,
-            :keys
-            {:value
-             {:fhir/polymorphic true,
-              :type zen/map,
-              :keys
-              {:code-renderingStyle
-               {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
-                :fhir/extensionUri
-                "http://hl7.org/fhir/StructureDefinition/rendering-style"},
-               :code-xhtml
-               {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
-                :fhir/extensionUri
-                "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
-            :fhir/flags #{:MS}},
-           :conceptConceptOrder
-           {:confirms #{hl7-fhir-r4-core.valueset-conceptOrder/schema},
-            :fhir/extensionUri
-            "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-            :fhir/flags #{:MS}},
-           :code #:fhir{:flags #{:MS}},
-           :display #:fhir{:flags #{:MS}},
-           :_display
-           {:type zen/map,
-            :keys
-            {:codeDisplay-renderingStyle
-             {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
-              :fhir/extensionUri
-              "http://hl7.org/fhir/StructureDefinition/rendering-style"},
-             :codeDisplay-xhtml
-             {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
-              :fhir/extensionUri
-              "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}},
-           :designation
-           {:type zen/vector,
-            :every
-            {:type zen/map,
-             :keys
-             {:designation-renderingStyle
-              {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
-               :fhir/extensionUri
-               "http://hl7.org/fhir/StructureDefinition/rendering-style"},
-              :designation-xhtml
-              {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
-               :fhir/extensionUri
-               "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}}},
-          :fhir/flags #{:MS}}},
-        :filter
-        {:type zen/vector,
-         :every
-         {:type zen/map,
-          :keys
-          {:property #:fhir{:flags #{:MS}},
-           :op #:fhir{:flags #{:MS}},
-           :value #:fhir{:flags #{:MS}}},
-          :fhir/flags #{:MS}}},
-        :valueSet {:type zen/vector, :every #:fhir{:flags #{:MS}}}},
-       :fhir/flags #{:MS}}},
-     :exclude {:type zen/vector, :every #:fhir{:flags #{:MS}}}},
-    :fhir/flags #{:MS}},
-   :styleSensitive
-   {:confirms #{hl7-fhir-r4-core.rendering-styleSensitive/schema},
-    :fhir/extensionUri
-    "http://hl7.org/fhir/StructureDefinition/rendering-styleSensitive",
-    :fhir/flags #{:MS}},
-   :date #:fhir{:flags #{:MS}},
-   :experimental #:fhir{:flags #{:MS}},
-   :expansion
-   {:type zen/map,
-    :keys
-    {:expansionSource
-     {:confirms #{hl7-fhir-r4-core.valueset-expansionSource/schema},
-      :fhir/extensionUri
-      "http://hl7.org/fhir/StructureDefinition/valueset-expansionSource"},
-     :identifier #:fhir{:flags #{:MS}},
-     :timestamp #:fhir{:flags #{:MS}},
-     :contains
-     {:type zen/vector,
-      :every
-      {:type zen/map,
-       :keys
-       {:system #:fhir{:flags #{:MS}},
-        :contains {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-        :conceptConceptOrder
-        {:confirms #{hl7-fhir-r4-core.valueset-conceptOrder/schema},
-         :fhir/extensionUri
-         "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-         :fhir/flags #{:MS}},
-        :abstract #:fhir{:flags #{:MS}},
-        :code #:fhir{:flags #{:MS}},
-        :display #:fhir{:flags #{:MS}},
-        :expansionLabel
-        {:confirms #{hl7-fhir-r4-core.valueset-label/schema},
-         :fhir/extensionUri
-         "http://hl7.org/fhir/StructureDefinition/valueset-label",
+ import #{hl7-fhir-r4-core.rendering-styleSensitive
+          zen.fhir
+          hl7-fhir-r4-core.valueset-expansionSource
+          hl7-fhir-r4-core.valueset-conceptOrder
+          hl7-fhir-r4-core.ValueSet
+          hl7-fhir-r4-core.valueset-label
+          hl7-fhir-r4-core.rendering-style
+          hl7-fhir-r4-core.rendering-xhtml},
+ schema {:zen.fhir/version "0.6.6-8",
+         :confirms #{hl7-fhir-r4-core.ValueSet/schema
+                     zen.fhir/Resource},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-valueset",
+         :require #{:immutable},
          :type zen/map,
-         :keys
-         {:value
-          {:fhir/polymorphic true,
-           :type zen/map,
-           :keys
-           {:expansion-renderingStyle
-            {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
-             :fhir/extensionUri
-             "http://hl7.org/fhir/StructureDefinition/rendering-style"},
-            :expansion-xhtml
-            {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
-             :fhir/extensionUri
-             "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
-         :fhir/flags #{:MS}},
-        :designation
-        {:type zen/vector,
-         :every
-         {:type zen/map,
-          :keys
-          {:value
-           {:type zen/map,
-            :keys
-            {:expansionDesignation-renderingStyle
-             {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
-              :fhir/extensionUri
-              "http://hl7.org/fhir/StructureDefinition/rendering-style"},
-             :expansionDesignation-xhtml
-             {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
-              :fhir/extensionUri
-              "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}}}},
-        :version #:fhir{:flags #{:MS}},
-        :_display
-        {:type zen/map,
-         :keys
-         {:expansionDisplay-renderingStyle
-          {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
-           :fhir/extensionUri
-           "http://hl7.org/fhir/StructureDefinition/rendering-style"},
-          :expansionDisplay-xhtml
-          {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
-           :fhir/extensionUri
-           "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
-       :fhir/flags #{:MS}}}},
-    :fhir/flags #{:MS}},
-   :status #:fhir{:flags #{:MS}},
-   :url #:fhir{:flags #{:MS}},
-   :immutable #:fhir{:flags #{:MS}}},
-  :zen.fhir/type "ValueSet"}}
+         :zen/desc "Defines how ValueSet is used to reflect code lists found in data element defintions and form definitions to be used within the ONC's Structured Data Capture standard.",
+         :keys {:description {:fhir/flags #{:MS}},
+                :compose {:type zen/map,
+                          :keys {:lockedDate {:fhir/flags #{:MS}},
+                                 :inactive {:fhir/flags #{:MS}},
+                                 :include {:type zen/vector,
+                                           :every {:type zen/map,
+                                                   :keys {:system {:fhir/flags #{:MS}},
+                                                          :version {:fhir/flags #{:MS}},
+                                                          :concept {:type zen/vector,
+                                                                    :every {:type zen/map,
+                                                                            :keys {:conceptLabel {:confirms #{hl7-fhir-r4-core.valueset-label/schema},
+                                                                                                  :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/valueset-label",
+                                                                                                  :type zen/map,
+                                                                                                  :keys {:value {:fhir/polymorphic true,
+                                                                                                                 :type zen/map,
+                                                                                                                 :keys {:code-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
+                                                                                                                                              :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
+                                                                                                                        :code-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
+                                                                                                                                     :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
+                                                                                                  :fhir/flags #{:MS}},
+                                                                                   :conceptConceptOrder {:confirms #{hl7-fhir-r4-core.valueset-conceptOrder/schema},
+                                                                                                         :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                                                                                                         :fhir/flags #{:MS}},
+                                                                                   :code {:fhir/flags #{:MS}},
+                                                                                   :display {:fhir/flags #{:MS}},
+                                                                                   :_display {:type zen/map,
+                                                                                              :keys {:codeDisplay-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
+                                                                                                                                  :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
+                                                                                                     :codeDisplay-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
+                                                                                                                         :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}},
+                                                                                   :designation {:type zen/vector,
+                                                                                                 :every {:type zen/map,
+                                                                                                         :keys {:designation-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
+                                                                                                                                             :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
+                                                                                                                :designation-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
+                                                                                                                                    :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}}},
+                                                                            :fhir/flags #{:MS}}},
+                                                          :filter {:type zen/vector,
+                                                                   :every {:type zen/map,
+                                                                           :keys {:property {:fhir/flags #{:MS}},
+                                                                                  :op {:fhir/flags #{:MS}},
+                                                                                  :value {:fhir/flags #{:MS}}},
+                                                                           :fhir/flags #{:MS}}},
+                                                          :valueSet {:type zen/vector,
+                                                                     :every {:fhir/flags #{:MS}}}},
+                                                   :fhir/flags #{:MS}}},
+                                 :exclude {:type zen/vector,
+                                           :every {:fhir/flags #{:MS}}}},
+                          :fhir/flags #{:MS}},
+                :styleSensitive {:confirms #{hl7-fhir-r4-core.rendering-styleSensitive/schema},
+                                 :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-styleSensitive",
+                                 :fhir/flags #{:MS}},
+                :date {:fhir/flags #{:MS}},
+                :experimental {:fhir/flags #{:MS}},
+                :expansion {:type zen/map,
+                            :keys {:expansionSource {:confirms #{hl7-fhir-r4-core.valueset-expansionSource/schema},
+                                                     :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/valueset-expansionSource"},
+                                   :identifier {:fhir/flags #{:MS}},
+                                   :timestamp {:fhir/flags #{:MS}},
+                                   :contains {:type zen/vector,
+                                              :every {:type zen/map,
+                                                      :keys {:system {:fhir/flags #{:MS}},
+                                                             :contains {:type zen/vector,
+                                                                        :every {:fhir/flags #{:MS}}},
+                                                             :conceptConceptOrder {:confirms #{hl7-fhir-r4-core.valueset-conceptOrder/schema},
+                                                                                   :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                                                                                   :fhir/flags #{:MS}},
+                                                             :abstract {:fhir/flags #{:MS}},
+                                                             :code {:fhir/flags #{:MS}},
+                                                             :display {:fhir/flags #{:MS}},
+                                                             :expansionLabel {:confirms #{hl7-fhir-r4-core.valueset-label/schema},
+                                                                              :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/valueset-label",
+                                                                              :type zen/map,
+                                                                              :keys {:value {:fhir/polymorphic true,
+                                                                                             :type zen/map,
+                                                                                             :keys {:expansion-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
+                                                                                                                               :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
+                                                                                                    :expansion-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
+                                                                                                                      :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
+                                                                              :fhir/flags #{:MS}},
+                                                             :designation {:type zen/vector,
+                                                                           :every {:type zen/map,
+                                                                                   :keys {:value {:type zen/map,
+                                                                                                  :keys {:expansionDesignation-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
+                                                                                                                                               :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
+                                                                                                         :expansionDesignation-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
+                                                                                                                                      :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}}}},
+                                                             :version {:fhir/flags #{:MS}},
+                                                             :_display {:type zen/map,
+                                                                        :keys {:expansionDisplay-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
+                                                                                                                 :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
+                                                                               :expansionDisplay-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
+                                                                                                        :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
+                                                      :fhir/flags #{:MS}}}},
+                            :fhir/flags #{:MS}},
+                :status {:fhir/flags #{:MS}},
+                :url {:fhir/flags #{:MS}},
+                :immutable {:fhir/flags #{:MS}}},
+         :zen.fhir/type "ValueSet"}}

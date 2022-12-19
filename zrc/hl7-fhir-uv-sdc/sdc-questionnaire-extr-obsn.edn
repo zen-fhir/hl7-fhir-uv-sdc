@@ -1,59 +1,34 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-extr-obsn,
- import
- #{zen.fhir
-   hl7-fhir-r4-core.questionnaire-unit
-   hl7-fhir-uv-sdc.sdc-questionnaire-observation-extract-category
-   hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract
-   hl7-fhir-uv-sdc.sdc-questionnaire
-   hl7-fhir-uv-sdc.sdc-questionnaire-isSubject},
- schema
- {:zen/tags #{zen.fhir/profile-schema zen/schema},
-  :zen/desc
-  "Defines elements that allow conversion of a QuestionnaireResponse to an Observation resource or Bundle of Observation resources using the Observation-based extraction mechanism",
-  :zen.fhir/type "Questionnaire",
-  :zen.fhir/profileUri
-  "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn",
-  :zen.fhir/version "0.6.6-7",
-  :confirms
-  #{hl7-fhir-uv-sdc.sdc-questionnaire/schema zen.fhir/Resource},
-  :type zen/map,
-  :keys
-  {:item
-   {:type zen/vector,
-    :every
-    {:type zen/map,
-     :keys
-     {:unit
-      {:confirms #{hl7-fhir-r4-core.questionnaire-unit/schema},
-       :fhir/extensionUri
-       "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-       :fhir/flags #{:MS}},
-      :observationExtract
-      {:confirms
-       #{hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract/schema},
-       :fhir/extensionUri
-       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
-       :fhir/flags #{:MS}},
-      :observationExtractCategory
-      {:type zen/vector,
-       :every
-       {:confirms
-        #{hl7-fhir-uv-sdc.sdc-questionnaire-observation-extract-category/schema},
-        :fhir/extensionUri
-        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"}},
-      :isSubject
-      {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema},
-       :fhir/extensionUri
-       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject"},
-      :code
-      {:type zen/vector,
-       :every
-       {:type zen/map,
-        :keys
-        {:observationExtract
-         {:confirms
-          #{hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract/schema},
-          :fhir/extensionUri
-          "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
-          :fhir/flags #{:MS}}},
-        :fhir/flags #{:MS}}}}}}}}}
+ import #{zen.fhir
+          hl7-fhir-r4-core.questionnaire-unit
+          hl7-fhir-uv-sdc.sdc-questionnaire-observation-extract-category
+          hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract
+          hl7-fhir-uv-sdc.sdc-questionnaire
+          hl7-fhir-uv-sdc.sdc-questionnaire-isSubject},
+ schema {:zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen/desc "Defines elements that allow conversion of a QuestionnaireResponse to an Observation resource or Bundle of Observation resources using the Observation-based extraction mechanism",
+         :zen.fhir/type "Questionnaire",
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn",
+         :zen.fhir/version "0.6.6-8",
+         :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
+                     zen.fhir/Resource},
+         :type zen/map,
+         :keys {:item {:type zen/vector,
+                       :every {:type zen/map,
+                               :keys {:unit {:confirms #{hl7-fhir-r4-core.questionnaire-unit/schema},
+                                             :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                             :fhir/flags #{:MS}},
+                                      :observationExtract {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract/schema},
+                                                           :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                                                           :fhir/flags #{:MS}},
+                                      :observationExtractCategory {:type zen/vector,
+                                                                   :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-observation-extract-category/schema},
+                                                                           :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"}},
+                                      :isSubject {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema},
+                                                  :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject"},
+                                      :code {:type zen/vector,
+                                             :every {:type zen/map,
+                                                     :keys {:observationExtract {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract/schema},
+                                                                                 :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                                                                                 :fhir/flags #{:MS}}},
+                                                     :fhir/flags #{:MS}}}}}}}}}

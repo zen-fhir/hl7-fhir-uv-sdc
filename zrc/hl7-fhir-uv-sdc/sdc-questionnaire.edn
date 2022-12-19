@@ -1,87 +1,62 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire,
- import
- #{zen.fhir
-   hl7-fhir-uv-sdc.sdc-questionnaire-performerType
-   hl7-fhir-r4-core.designNote
-   hl7-fhir-r4-core.Questionnaire
-   hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer
-   hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation},
- schema
- {:zen.fhir/version "0.6.6-7",
-  :confirms #{hl7-fhir-r4-core.Questionnaire/schema zen.fhir/Resource},
-  :zen/tags #{zen.fhir/profile-schema zen/schema},
-  :zen.fhir/profileUri
-  "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
-  :require #{:url},
-  :type zen/map,
-  :zen/desc
-  "Sets minimum expectations for questionnaire support for SDC-conformant systems, regardless of which SDC capabilities they're making use of.",
-  :keys
-  {:performerType
-   {:type zen/vector,
-    :every
-    {:confirms
-     #{hl7-fhir-uv-sdc.sdc-questionnaire-performerType/schema},
-     :fhir/extensionUri
-     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
-     :fhir/flags #{:MS}}},
-   :subjectType {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-   :assemble-expectation
-   {:confirms
-    #{hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema},
-    :fhir/extensionUri
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
-    :fhir/flags #{:MS}},
-   :item
-   {:type zen/vector,
-    :every
-    {:type zen/map,
-     :keys
-     {:linkId #:fhir{:flags #{:MS}},
-      :repeats #:fhir{:flags #{:MS}},
-      :item {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-      :type #:fhir{:flags #{:MS}},
-      :answerOption {:type zen/vector, :every #:fhir{:flags #{:MS}}},
-      :prefix #:fhir{:flags #{:MS}},
-      :readOnly #:fhir{:flags #{:MS}},
-      :answerValueSet #:fhir{:flags #{:MS}},
-      :initial
-      {:type zen/vector,
-       :every
-       {:type zen/map,
-        :keys
-        {:value
-         {:fhir/polymorphic true, :type zen/map, :fhir/flags #{:MS}}},
-        :fhir/flags #{:MS}}},
-      :maxLength #:fhir{:flags #{:MS}},
-      :designNote
-      {:confirms #{hl7-fhir-r4-core.designNote/schema},
-       :fhir/extensionUri
-       "http://hl7.org/fhir/StructureDefinition/designNote"},
-      :terminologyServer
-      {:type zen/vector,
-       :every
-       {:confirms
-        #{hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema},
-        :fhir/extensionUri
-        "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}},
-      :required #:fhir{:flags #{:MS}},
-      :text #:fhir{:flags #{:MS}}},
-     :require #{:linkId :type},
-     :fhir/flags #{:MS}}},
-   :title #:fhir{:flags #{:MS}},
-   :status #:fhir{:flags #{:MS}},
-   :url #:fhir{:flags #{:MS}},
-   :designNote
-   {:confirms #{hl7-fhir-r4-core.designNote/schema},
-    :fhir/extensionUri
-    "http://hl7.org/fhir/StructureDefinition/designNote"},
-   :version #:fhir{:flags #{:MS}},
-   :terminologyServer
-   {:type zen/vector,
-    :every
-    {:confirms
-     #{hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema},
-     :fhir/extensionUri
-     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}}},
-  :zen.fhir/type "Questionnaire"}}
+ import #{zen.fhir
+          hl7-fhir-uv-sdc.sdc-questionnaire-performerType
+          hl7-fhir-r4-core.designNote
+          hl7-fhir-r4-core.Questionnaire
+          hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer
+          hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation},
+ schema {:zen.fhir/version "0.6.6-8",
+         :confirms #{hl7-fhir-r4-core.Questionnaire/schema
+                     zen.fhir/Resource},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
+         :require #{:url},
+         :type zen/map,
+         :zen/desc "Sets minimum expectations for questionnaire support for SDC-conformant systems, regardless of which SDC capabilities they're making use of.",
+         :keys {:performerType {:type zen/vector,
+                                :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-performerType/schema},
+                                        :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+                                        :fhir/flags #{:MS}}},
+                :subjectType {:type zen/vector,
+                              :every {:fhir/flags #{:MS}}},
+                :assemble-expectation {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema},
+                                       :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
+                                       :fhir/flags #{:MS}},
+                :item {:type zen/vector,
+                       :every {:type zen/map,
+                               :keys {:linkId {:fhir/flags #{:MS}},
+                                      :repeats {:fhir/flags #{:MS}},
+                                      :item {:type zen/vector,
+                                             :every {:fhir/flags #{:MS}}},
+                                      :type {:fhir/flags #{:MS}},
+                                      :answerOption {:type zen/vector,
+                                                     :every {:fhir/flags #{:MS}}},
+                                      :prefix {:fhir/flags #{:MS}},
+                                      :readOnly {:fhir/flags #{:MS}},
+                                      :answerValueSet {:fhir/flags #{:MS}},
+                                      :initial {:type zen/vector,
+                                                :every {:type zen/map,
+                                                        :keys {:value {:fhir/polymorphic true,
+                                                                       :type zen/map,
+                                                                       :fhir/flags #{:MS}}},
+                                                        :fhir/flags #{:MS}}},
+                                      :maxLength {:fhir/flags #{:MS}},
+                                      :designNote {:confirms #{hl7-fhir-r4-core.designNote/schema},
+                                                   :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/designNote"},
+                                      :terminologyServer {:type zen/vector,
+                                                          :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema},
+                                                                  :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}},
+                                      :required {:fhir/flags #{:MS}},
+                                      :text {:fhir/flags #{:MS}}},
+                               :require #{:linkId :type},
+                               :fhir/flags #{:MS}}},
+                :title {:fhir/flags #{:MS}},
+                :status {:fhir/flags #{:MS}},
+                :url {:fhir/flags #{:MS}},
+                :designNote {:confirms #{hl7-fhir-r4-core.designNote/schema},
+                             :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/designNote"},
+                :version {:fhir/flags #{:MS}},
+                :terminologyServer {:type zen/vector,
+                                    :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema},
+                                            :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"}}},
+         :zen.fhir/type "Questionnaire"}}

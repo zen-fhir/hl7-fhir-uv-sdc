@@ -1,12 +1,11 @@
 {ns hl7-fhir-uv-sdc.search.questionnaire-assembledFrom,
  import #{zen.fhir},
- search
- {:zen/tags #{zen.fhir/search},
-  :fhir/id "questionnaire-assembledFrom",
-  :fhir/url
-  "http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assembledFrom",
-  :fhir/type "token",
-  :name "assembled-from",
-  :expr
-  {:Questionnaire
-   {:knife [], :jsonpath [], :data-types #{}, :template :token}}}}
+ search {:zen/tags #{zen.fhir/search},
+         :fhir/id "questionnaire-assembledFrom",
+         :fhir/url "http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assembledFrom",
+         :fhir/type "token",
+         :name "assembled-from",
+         :expr {:Questionnaire {:knife [],
+                                :jsonpath [],
+                                :data-types #{},
+                                :template :token}}}}

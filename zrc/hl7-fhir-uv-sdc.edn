@@ -1,194 +1,93 @@
 {ns hl7-fhir-uv-sdc,
  import #{zen.fhir hl7-fhir-r4-core},
- extensions
- {:zen/tags #{zen.fhir/extensions},
-  :schemas
-  {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-questionnaireAdaptive/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerOptionsToggleExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-answerOptionsToggleExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-choiceColumn"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-choiceColumn/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-contextExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-contextExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-launchContext/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemExtractionContext/schema}},
- ig
- {:zen/tags #{zen.fhir/ig},
-  :profiles profiles,
-  :extensions extensions,
-  :structures structures,
-  :value-sets value-sets,
-  :searches searches},
- profiles
- {:zen/tags #{zen.fhir/profiles},
-  :schemas
-  {"Questionnaire"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-extr-obsn/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-adapt/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-defn"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-extr-defn/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-pop-obsn/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-smap"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-extr-smap/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt-srch"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-adapt-srch/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-search"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-search/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-render/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-pop-exp/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-modular/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-smap"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-pop-smap/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-behave/schema},
-   "ValueSet"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-valueset"
-    #zen/quote hl7-fhir-uv-sdc.sdc-valueset/schema},
-   "ServiceRequest"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest"
-    #zen/quote hl7-fhir-uv-sdc.sdc-servicerequest/schema},
-   "Library"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-library"
-    #zen/quote hl7-fhir-uv-sdc.sdc-library/schema},
-   "QuestionnaireResponse"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaireresponse-adapt/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse"
-    #zen/quote hl7-fhir-uv-sdc.sdc-questionnaireresponse/schema},
-   "Parameters"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-next-question-in"
-    #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-next-question-in/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-assemble-out"
-    #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-assemble-out/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-next-question-out"
-    #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-next-question-out/schema,
-    "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-process-response-in"
-    #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-process-response-in/schema},
-   "Task"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-task"
-    #zen/quote hl7-fhir-uv-sdc.sdc-task/schema},
-   "CodeSystem"
-   {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-codesystem"
-    #zen/quote hl7-fhir-uv-sdc.sdc-codesystem/schema}}},
- searches
- {:zen/tags #{zen.fhir/searches},
-  :searches
-  {"SDCQuestionnaireAssembledFrom"
-   {"http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assembledFrom"
-    #zen/quote hl7-fhir-uv-sdc.search.questionnaire-assembledFrom/search},
-   "SDCQuestionnaireIsModular"
-   {"http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assemble-expectation"
-    #zen/quote hl7-fhir-uv-sdc.search.questionnaire-assemble-expectation/search}}},
- structures
- {:zen/tags #{zen.fhir/structures},
-  :schemas
-  {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-subQuestionnaire/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest-questionnaire"
-   #zen/quote hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-calculatedExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/structuredefinition-sdc-profile-example"
-   #zen/quote hl7-fhir-uv-sdc.structuredefinition-sdc-profile-example/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-candidateExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-candidateExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-collapsible/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-endpoint"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-endpoint/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-minQuantity/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-openLabel/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-observationLinkPeriod/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-targetStructureMap/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-optionalDisplay"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-optionalDisplay/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-maxQuantity/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-entryMode"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-entryMode/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-question-library"
-   #zen/quote hl7-fhir-uv-sdc.sdc-question-library/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-answerExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemPopulationContext/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemAnswerMedia"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-width/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-unitOpen"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-unitOpen/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-unitSupplementalSystem"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-unitSupplementalSystem/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-shortText/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-enableWhenExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-observation-extract-category/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-sourceQueries/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-lookupQuestionnaire"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-lookupQuestionnaire/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-assembleContext/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-initialExpression/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-usagecontext"
-   #zen/quote hl7-fhir-uv-sdc.sdc-usagecontext/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-referencesContained"
-   #zen/quote hl7-fhir-uv-sdc.sdc-referencesContained/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceStructureMap"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-sourceStructureMap/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-isSubject"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaireresponse-isSubject/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemMedia"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia/schema,
-   "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
-   #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-performerType/schema}},
- value-sets
- {:zen/tags #{zen.fhir/value-sets},
-  :value-sets
-  {"http://hl7.org/fhir/uv/sdc/ValueSet/performerType"
-   #zen/quote hl7-fhir-uv-sdc.value-set.performerType/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/launchContext"
-   #zen/quote hl7-fhir-uv-sdc.value-set.launchContext/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/dex-mimetype"
-   #zen/quote hl7-fhir-uv-sdc.value-set.dex-mimetype/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/species"
-   #zen/quote hl7-fhir-uv-sdc.value-set.species/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/collapsible"
-   #zen/quote hl7-fhir-uv-sdc.value-set.collapsible/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/assemble-expectation"
-   #zen/quote hl7-fhir-uv-sdc.value-set.assemble-expectation/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/questionnaire-answer-constraint"
-   #zen/quote hl7-fhir-uv-sdc.value-set.questionnaire-answer-constraint/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/entryMode"
-   #zen/quote hl7-fhir-uv-sdc.value-set.entryMode/value-set,
-   "http://hl7.org/fhir/uv/sdc/ValueSet/task-code"
-   #zen/quote hl7-fhir-uv-sdc.value-set.task-code/value-set}}}
+ extensions {:zen/tags #{zen.fhir/extensions},
+             :schemas {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-questionnaireAdaptive/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerOptionsToggleExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-answerOptionsToggleExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-choiceColumn" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-choiceColumn/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-contextExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-contextExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-launchContext/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemExtractionContext/schema}},
+ ig {:zen/tags #{zen.fhir/ig},
+     :profiles profiles,
+     :extensions extensions,
+     :structures structures,
+     :value-sets value-sets,
+     :searches searches},
+ profiles {:zen/tags #{zen.fhir/profiles},
+           :schemas {"Questionnaire" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-extr-obsn/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-adapt/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-defn" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-extr-defn/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-pop-obsn/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-smap" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-extr-smap/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt-srch" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-adapt-srch/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-search" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-search/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-render/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-pop-exp/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-modular/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-smap" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-pop-smap/schema,
+                                      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-behave/schema},
+                     "ValueSet" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-valueset" #zen/quote hl7-fhir-uv-sdc.sdc-valueset/schema},
+                     "ServiceRequest" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest" #zen/quote hl7-fhir-uv-sdc.sdc-servicerequest/schema},
+                     "Library" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-library" #zen/quote hl7-fhir-uv-sdc.sdc-library/schema},
+                     "QuestionnaireResponse" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaireresponse-adapt/schema,
+                                              "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaireresponse/schema},
+                     "Parameters" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-next-question-in" #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-next-question-in/schema,
+                                   "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-assemble-out" #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-assemble-out/schema,
+                                   "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-next-question-out" #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-next-question-out/schema,
+                                   "http://hl7.org/fhir/uv/sdc/StructureDefinition/parameters-questionnaire-process-response-in" #zen/quote hl7-fhir-uv-sdc.parameters-questionnaire-process-response-in/schema},
+                     "Task" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-task" #zen/quote hl7-fhir-uv-sdc.sdc-task/schema},
+                     "CodeSystem" {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-codesystem" #zen/quote hl7-fhir-uv-sdc.sdc-codesystem/schema}}},
+ searches {:zen/tags #{zen.fhir/searches},
+           :searches {"SDCQuestionnaireAssembledFrom" {"http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assembledFrom" #zen/quote hl7-fhir-uv-sdc.search.questionnaire-assembledFrom/search},
+                      "SDCQuestionnaireIsModular" {"http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assemble-expectation" #zen/quote hl7-fhir-uv-sdc.search.questionnaire-assemble-expectation/search}}},
+ structures {:zen/tags #{zen.fhir/structures},
+             :schemas {"http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-subQuestionnaire/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-servicerequest-questionnaire" #zen/quote hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-calculatedExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/structuredefinition-sdc-profile-example" #zen/quote hl7-fhir-uv-sdc.structuredefinition-sdc-profile-example/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-candidateExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-candidateExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-collapsible/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-endpoint" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-endpoint/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-minQuantity/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-openLabel/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-observationLinkPeriod/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-targetStructureMap/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-optionalDisplay" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-optionalDisplay/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-maxQuantity/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-entryMode" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-entryMode/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-question-library" #zen/quote hl7-fhir-uv-sdc.sdc-question-library/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-answerExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemPopulationContext/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemAnswerMedia" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-width/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-unitOpen" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-unitOpen/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-unitSupplementalSystem" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-unitSupplementalSystem/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-shortText/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-enableWhenExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-observationExtract/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-observation-extract-category/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-sourceQueries/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-lookupQuestionnaire" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-lookupQuestionnaire/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-assembleContext/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-initialExpression/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-usagecontext" #zen/quote hl7-fhir-uv-sdc.sdc-usagecontext/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-referencesContained" #zen/quote hl7-fhir-uv-sdc.sdc-referencesContained/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceStructureMap" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-sourceStructureMap/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-isSubject" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaireresponse-isSubject/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemMedia" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia/schema,
+                       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType" #zen/quote hl7-fhir-uv-sdc.sdc-questionnaire-performerType/schema}},
+ value-sets {:zen/tags #{zen.fhir/value-sets},
+             :value-sets {"http://hl7.org/fhir/uv/sdc/ValueSet/performerType" #zen/quote hl7-fhir-uv-sdc.value-set.performerType/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/launchContext" #zen/quote hl7-fhir-uv-sdc.value-set.launchContext/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/dex-mimetype" #zen/quote hl7-fhir-uv-sdc.value-set.dex-mimetype/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/species" #zen/quote hl7-fhir-uv-sdc.value-set.species/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/collapsible" #zen/quote hl7-fhir-uv-sdc.value-set.collapsible/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/assemble-expectation" #zen/quote hl7-fhir-uv-sdc.value-set.assemble-expectation/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/questionnaire-answer-constraint" #zen/quote hl7-fhir-uv-sdc.value-set.questionnaire-answer-constraint/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/entryMode" #zen/quote hl7-fhir-uv-sdc.value-set.entryMode/value-set,
+                          "http://hl7.org/fhir/uv/sdc/ValueSet/task-code" #zen/quote hl7-fhir-uv-sdc.value-set.task-code/value-set}}}
