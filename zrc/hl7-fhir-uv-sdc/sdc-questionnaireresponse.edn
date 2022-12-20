@@ -7,7 +7,7 @@
           hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia
           hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia
           hl7-fhir-r4-core.QuestionnaireResponse},
- schema {:zen.fhir/version "0.6.7",
+ schema {:zen.fhir/version "0.6.7-2",
          :confirms #{hl7-fhir-r4-core.QuestionnaireResponse/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},

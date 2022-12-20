@@ -5,7 +5,7 @@
           hl7-fhir-r4-core.string
           hl7-fhir-uv-sdc.value-set.launchContext
           hl7-fhir-r4-core.Coding},
- schema {:zen.fhir/version "0.6.7",
+ schema {:zen.fhir/version "0.6.7-2",
          :zen/tags #{zen/schema zen.fhir/structure-schema},
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
          :require #{:name :type},

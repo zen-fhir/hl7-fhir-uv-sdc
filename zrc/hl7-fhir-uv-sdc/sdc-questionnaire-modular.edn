@@ -4,7 +4,7 @@
           hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
           hl7-fhir-uv-sdc.sdc-questionnaire
           hl7-fhir-uv-sdc.sdc-questionnaire-assembleContext},
- schema {:zen.fhir/version "0.6.7",
+ schema {:zen.fhir/version "0.6.7-2",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
