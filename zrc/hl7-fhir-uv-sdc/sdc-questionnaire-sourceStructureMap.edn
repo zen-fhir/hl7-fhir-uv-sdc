@@ -4,5 +4,5 @@
          :zen/desc "StructureMaps that have this QuestionnaireResponses for this Questionnaire as 'target' - i.e. that can be used to create QuestionnaireResponses that are valid against this Questionnaire.",
          :zen.fhir/type "canonical",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceStructureMap",
-         :zen.fhir/version "0.6.7-4",
+         :zen.fhir/version "0.6.7-5",
          :confirms #{hl7-fhir-r4-core.canonical/schema}}}

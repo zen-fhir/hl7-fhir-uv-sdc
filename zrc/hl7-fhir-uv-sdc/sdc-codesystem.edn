@@ -4,7 +4,7 @@
           hl7-fhir-r4-core.CodeSystem
           hl7-fhir-r4-core.rendering-style
           hl7-fhir-r4-core.rendering-xhtml},
- schema {:zen.fhir/version "0.6.7-4",
+ schema {:zen.fhir/version "0.6.7-5",
          :confirms #{hl7-fhir-r4-core.CodeSystem/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
