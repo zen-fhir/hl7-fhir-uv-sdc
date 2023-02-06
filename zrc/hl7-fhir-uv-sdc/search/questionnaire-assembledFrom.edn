@@ -5,7 +5,7 @@
          :fhir/url "http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assembledFrom",
          :fhir/type "token",
          :name "assembled-from",
-         :expr {:Questionnaire {:knife [],
-                                :jsonpath [],
+         :expr {:Questionnaire {:knife [["extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom'"]],
+                                :jsonpath ["$.\"extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom'\"[*]"],
                                 :data-types #{},
                                 :template :token}}}}

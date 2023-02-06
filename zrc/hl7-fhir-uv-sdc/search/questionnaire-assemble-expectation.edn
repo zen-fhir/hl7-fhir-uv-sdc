@@ -5,7 +5,7 @@
          :fhir/url "http://hl7.org/fhir/uv/sdc/SearchParameter/questionnaire-assemble-expectation",
          :fhir/type "token",
          :name "assemble-expectation",
-         :expr {:Questionnaire {:knife [],
-                                :jsonpath [],
+         :expr {:Questionnaire {:knife [["extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation'"]],
+                                :jsonpath ["$.\"extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation'\"[*]"],
                                 :data-types #{},
                                 :template :token}}}}
