@@ -4,5 +4,5 @@
          :zen/desc "If the questionnaire-unit-open extension indicates that additional units other than the set of options provided for the question are allowed, this indicates the code system those units are expected to be drawn from.  This extension SHOULD be present on any question where questionnaire-unit-open allows additional coded values.",
          :zen.fhir/type "canonical",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-unitSupplementalSystem",
-         :zen.fhir/version "0.6.16-2",
+         :zen.fhir/version "0.6.16-3",
          :confirms #{hl7-fhir-r4-core.canonical/schema}}}

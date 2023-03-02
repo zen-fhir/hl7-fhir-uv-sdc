@@ -24,7 +24,7 @@
          :zen/desc "Defines additional capabilities for controlling the rendering of the questionnaire.",
          :zen.fhir/type "Questionnaire",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
-         :zen.fhir/version "0.6.16-2",
+         :zen.fhir/version "0.6.16-3",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :type zen/map,
