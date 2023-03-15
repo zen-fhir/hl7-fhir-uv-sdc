@@ -3,7 +3,7 @@
           hl7-fhir-r4-core.boolean
           hl7-fhir-r4-core.string
           hl7-fhir-r4-core.Quantity},
- schema {:zen.fhir/version "0.6.16-3",
+ schema {:zen.fhir/version "0.6.17",
          :zen/tags #{zen/schema zen.fhir/structure-schema},
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-choiceColumn",
          :require #{:path},
