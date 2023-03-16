@@ -5,7 +5,7 @@
           hl7-fhir-r4-core.Questionnaire
           hl7-fhir-uv-sdc.sdc-questionnaire-preferredTerminologyServer
           hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation},
- schema {:zen.fhir/version "0.6.17-4",
+ schema {:zen.fhir/version "0.6.18-1",
          :confirms #{hl7-fhir-r4-core.Questionnaire/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
