@@ -1,10 +1,20 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-modular,
- import #{zen.fhir
+ import #{hl7-fhir-uv-sdc.sdc-questionnaire-modular
+          zen.fhir
           hl7-fhir-uv-sdc.sdc-questionnaire-subQuestionnaire
           hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
           hl7-fhir-uv-sdc.sdc-questionnaire
           hl7-fhir-uv-sdc.sdc-questionnaire-assembleContext},
- schema {:zen.fhir/version "0.6.18-1",
+ item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
+              :zen.fhir/version "0.6.19",
+              :type zen/map,
+              :keys {:subQuestionnaire {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-subQuestionnaire/schema},
+                                        :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
+                                        :fhir/flags #{:MS}},
+                     :item {:type zen/vector,
+                            :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-modular/item-schema}}}},
+              :fhir/flags #{:MS}},
+ schema {:zen.fhir/version "0.6.19",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -18,9 +28,5 @@
                                   :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
                                   :fhir/flags #{:MS}},
                 :item {:type zen/vector,
-                       :every {:type zen/map,
-                               :keys {:subQuestionnaire {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-subQuestionnaire/schema},
-                                                         :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
-                                                         :fhir/flags #{:MS}}},
-                               :fhir/flags #{:MS}}}},
+                       :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-modular/item-schema}}}},
          :zen.fhir/type "Questionnaire"}}

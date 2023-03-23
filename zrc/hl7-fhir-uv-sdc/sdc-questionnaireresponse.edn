@@ -4,10 +4,52 @@
           hl7-fhir-r4-core.questionnaireresponse-signature
           hl7-fhir-r4-core.display
           hl7-fhir-r4-core.ordinalValue
+          hl7-fhir-uv-sdc.sdc-questionnaireresponse
           hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia
           hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia
           hl7-fhir-r4-core.QuestionnaireResponse},
- schema {:zen.fhir/version "0.6.18-1",
+ item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
+              :zen.fhir/version "0.6.19",
+              :type zen/map,
+              :keys {:itemMedia {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia/schema},
+                                 :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemMedia"},
+                     :ItemSignature {:type zen/vector,
+                                     :every {:confirms #{hl7-fhir-r4-core.questionnaireresponse-signature/schema},
+                                             :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature"}},
+                     :linkId {:fhir/flags #{:MS}},
+                     :text {:fhir/flags #{:MS}},
+                     :answer {:type zen/vector,
+                              :every {:type zen/map,
+                                      :keys {:itemAnswerMedia {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia/schema},
+                                                               :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemAnswerMedia"},
+                                             :ordinalValue {:confirms #{hl7-fhir-r4-core.ordinalValue/schema},
+                                                            :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/ordinalValue"},
+                                             :value {:fhir/polymorphic true,
+                                                     :type zen/map,
+                                                     :exclusive-keys #{#{:date
+                                                                         :time
+                                                                         :string
+                                                                         :dateTime
+                                                                         :integer
+                                                                         :decimal
+                                                                         :Attachment
+                                                                         :Coding
+                                                                         :uri
+                                                                         :Quantity
+                                                                         :boolean
+                                                                         :Reference}},
+                                                     :keys {:Reference {:confirms #{zen.fhir/Reference},
+                                                                        :zen.fhir/reference {:refers #{}}}},
+                                                     :fhir/flags #{:MS}},
+                                             :item {:type zen/vector,
+                                                    :every {:fhir/flags #{:MS}}}},
+                                      :fhir/flags #{:MS}}},
+                     :item {:type zen/vector,
+                            :every {:fhir/flags #{:MS},
+                                    :confirms #{hl7-fhir-uv-sdc.sdc-questionnaireresponse/item-schema}}}},
+              :require #{:linkId},
+              :fhir/flags #{:MS}},
+ schema {:zen.fhir/version "0.6.19",
          :confirms #{hl7-fhir-r4-core.QuestionnaireResponse/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -22,44 +64,7 @@
                             :every {:confirms #{hl7-fhir-r4-core.questionnaireresponse-signature/schema},
                                     :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature"}},
                 :item {:type zen/vector,
-                       :every {:type zen/map,
-                               :keys {:itemMedia {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia/schema},
-                                                  :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemMedia"},
-                                      :ItemSignature {:type zen/vector,
-                                                      :every {:confirms #{hl7-fhir-r4-core.questionnaireresponse-signature/schema},
-                                                              :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature"}},
-                                      :linkId {:fhir/flags #{:MS}},
-                                      :text {:fhir/flags #{:MS}},
-                                      :answer {:type zen/vector,
-                                               :every {:type zen/map,
-                                                       :keys {:itemAnswerMedia {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-itemAnswerMedia/schema},
-                                                                                :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemAnswerMedia"},
-                                                              :ordinalValue {:confirms #{hl7-fhir-r4-core.ordinalValue/schema},
-                                                                             :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/ordinalValue"},
-                                                              :value {:fhir/polymorphic true,
-                                                                      :type zen/map,
-                                                                      :exclusive-keys #{#{:date
-                                                                                          :time
-                                                                                          :string
-                                                                                          :dateTime
-                                                                                          :integer
-                                                                                          :decimal
-                                                                                          :Attachment
-                                                                                          :Coding
-                                                                                          :uri
-                                                                                          :Quantity
-                                                                                          :boolean
-                                                                                          :Reference}},
-                                                                      :keys {:Reference {:confirms #{zen.fhir/Reference},
-                                                                                         :zen.fhir/reference {:refers #{}}}},
-                                                                      :fhir/flags #{:MS}},
-                                                              :item {:type zen/vector,
-                                                                     :every {:fhir/flags #{:MS}}}},
-                                                       :fhir/flags #{:MS}}},
-                                      :item {:type zen/vector,
-                                             :every {:fhir/flags #{:MS}}}},
-                               :require #{:linkId},
-                               :fhir/flags #{:MS}}},
+                       :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaireresponse/item-schema}}},
                 :source {:confirms #{zen.fhir/Reference},
                          :zen.fhir/reference {:refers #{}}},
                 :author {:fhir/flags #{:MS},

@@ -1,10 +1,16 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-search,
  import #{zen.fhir
           hl7-fhir-uv-sdc.sdc-questionnaire-assembledFrom
+          hl7-fhir-uv-sdc.sdc-questionnaire-search
           hl7-fhir-uv-sdc.sdc-usagecontext
           hl7-fhir-uv-sdc.sdc-questionnaire-assemble-expectation
           hl7-fhir-uv-sdc.sdc-questionnaire},
- schema {:zen.fhir/version "0.6.18-1",
+ item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
+              :zen.fhir/version "0.6.19",
+              :type zen/map,
+              :keys {:item {:type zen/vector,
+                            :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-search/item-schema}}}}},
+ schema {:zen.fhir/version "0.6.19",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -19,6 +25,8 @@
                 :publisher {:fhir/flags #{:MS}},
                 :jurisdiction {:type zen/vector, :maxItems 1},
                 :purpose {:fhir/flags #{:MS}},
+                :item {:type zen/vector,
+                       :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-search/item-schema}}},
                 :useContext {:type zen/vector,
                              :every {:confirms #{hl7-fhir-uv-sdc.sdc-usagecontext/schema},
                                      :fhir/flags #{:MS}}},
