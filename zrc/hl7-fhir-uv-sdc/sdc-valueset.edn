@@ -10,7 +10,7 @@
           hl7-fhir-r4-core.rendering-xhtml},
  compose-include-concept-designation-schema {:zen/tags #{zen/schema
                                                          zen.fhir/structure-schema},
-                                             :zen.fhir/version "0.6.22",
+                                             :zen.fhir/version "0.6.22-1",
                                              :type zen/map,
                                              :keys {:designation-renderingStyle {:confirms #{hl7-fhir-r4-core.rendering-style/schema},
                                                                                  :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-style"},
@@ -18,7 +18,7 @@
                                                                         :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}},
  compose-include-schema {:zen/tags #{zen/schema
                                      zen.fhir/structure-schema},
-                         :zen.fhir/version "0.6.22",
+                         :zen.fhir/version "0.6.22-1",
                          :type zen/map,
                          :keys {:system {:fhir/flags #{:MS}},
                                 :version {:fhir/flags #{:MS}},
@@ -58,7 +58,7 @@
                          :fhir/flags #{:MS}},
  expansion-contains-schema {:zen/tags #{zen/schema
                                         zen.fhir/structure-schema},
-                            :zen.fhir/version "0.6.22",
+                            :zen.fhir/version "0.6.22-1",
                             :type zen/map,
                             :keys {:system {:fhir/flags #{:MS}},
                                    :contains {:type zen/vector,
@@ -94,7 +94,7 @@
                                                      :expansionDisplay-xhtml {:confirms #{hl7-fhir-r4-core.rendering-xhtml/schema},
                                                                               :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"}}}},
                             :fhir/flags #{:MS}},
- schema {:zen.fhir/version "0.6.22",
+ schema {:zen.fhir/version "0.6.22-1",
          :confirms #{hl7-fhir-r4-core.ValueSet/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},

@@ -22,7 +22,7 @@
           hl7-fhir-r4-core.rendering-xhtml
           hl7-fhir-r4-core.questionnaire-choiceOrientation},
  item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-              :zen.fhir/version "0.6.22",
+              :zen.fhir/version "0.6.22-1",
               :type zen/map,
               :keys {:itemHidden {:confirms #{hl7-fhir-r4-core.questionnaire-hidden/schema},
                                   :fhir/extensionUri "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
@@ -93,7 +93,7 @@
          :zen/desc "Defines additional capabilities for controlling the rendering of the questionnaire.",
          :zen.fhir/type "Questionnaire",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
-         :zen.fhir/version "0.6.22",
+         :zen.fhir/version "0.6.22-1",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :type zen/map,
