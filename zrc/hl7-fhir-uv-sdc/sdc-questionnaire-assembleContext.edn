@@ -4,5 +4,5 @@
          :zen/desc "Indicates a variable that must be available on any node that is referencing the Questionnaire as a sub-questionnaire",
          :zen.fhir/type "string",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
-         :zen.fhir/version "0.6.23-1",
+         :zen.fhir/version "0.6.24",
          :confirms #{hl7-fhir-r4-core.string/schema}}}

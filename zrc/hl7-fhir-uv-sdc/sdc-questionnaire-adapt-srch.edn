@@ -1,16 +1,13 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-adapt-srch,
  import #{hl7-fhir-uv-sdc.sdc-questionnaire-questionnaireAdaptive
           zen.fhir
-          hl7-fhir-uv-sdc.sdc-questionnaire-adapt-srch
           hl7-fhir-uv-sdc.sdc-questionnaire-search
           hl7-fhir-uv-sdc.sdc-questionnaire-endpoint},
- item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-              :zen.fhir/version "0.6.23-1"},
  schema {:zen/tags #{zen.fhir/profile-schema zen/schema},
          :zen/desc "Describes the elements that should be exposed in a response to a search for adaptive questionnaires.",
          :zen.fhir/type "Questionnaire",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt-srch",
-         :zen.fhir/version "0.6.23-1",
+         :zen.fhir/version "0.6.24",
          :confirms #{zen.fhir/Resource
                      hl7-fhir-uv-sdc.sdc-questionnaire-search/schema},
          :type zen/map,
@@ -20,5 +17,4 @@
                 :submissionEndpoint {:type zen/vector,
                                      :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-endpoint/schema},
                                              :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-endpoint",
-                                             :fhir/flags #{:MS}}},
-                :item {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-adapt-srch/item-schema}}}}}
+                                             :fhir/flags #{:MS}}}}}}
