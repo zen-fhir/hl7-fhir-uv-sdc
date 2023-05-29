@@ -4,5 +4,5 @@
          :zen/desc "The label text to display beside free-text and/or unrestricted type values for an 'open' choice element.  E.g. 'Other, please specify', or 'Additional condition', or 'More reason(s)', etc.",
          :zen.fhir/type "string",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-         :zen.fhir/version "0.6.25-1",
+         :zen.fhir/version "0.6.27",
          :confirms #{hl7-fhir-r4-core.string/schema}}}

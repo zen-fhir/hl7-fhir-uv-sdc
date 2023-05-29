@@ -2,7 +2,7 @@
  import #{zen.fhir
           hl7-fhir-r4-core.string
           hl7-fhir-r4-core.Expression},
- schema {:zen.fhir/version "0.6.25-1",
+ schema {:zen.fhir/version "0.6.27",
          :zen/tags #{zen/schema zen.fhir/structure-schema},
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-contextExpression",
          :require #{:expression :label},
