@@ -1,8 +1,10 @@
 {ns hl7-fhir-uv-sdc.sdc-questionnaire-questionnaireAdaptive,
  import #{hl7-fhir-r4-core.url zen.fhir hl7-fhir-r4-core.boolean},
  schema {:fhir/polymorphic true,
-         :zen.fhir/version "0.6.27",
-         :zen/tags #{zen/schema zen.fhir/structure-schema},
+         :zen.fhir/version "0.6.28",
+         :zen/tags #{zen.fhir/extension
+                     zen/schema
+                     zen.fhir/structure-schema},
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive",
          :type zen/map,
          :zen/desc "Marks a questionnaire as being adaptive.  Value can either be a boolean (if true, indicates adaptive) or a URL for the base URL of a server that can perform the nextQuestion operation for this particular questionnaire.",

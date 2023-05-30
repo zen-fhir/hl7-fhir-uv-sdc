@@ -4,8 +4,10 @@
           zen.fhir
           hl7-fhir-r4-core.Expression},
  schema {:fhir/polymorphic true,
-         :zen.fhir/version "0.6.27",
-         :zen/tags #{zen/schema zen.fhir/structure-schema},
+         :zen.fhir/version "0.6.28",
+         :zen/tags #{zen.fhir/extension
+                     zen/schema
+                     zen.fhir/structure-schema},
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
          :type zen/map,
          :zen/desc "Specifies a query or other expression that identifies the resource (or set of resources for a repeating item) to be extracted from this item once the QuestionnaireResponse is complete.",
