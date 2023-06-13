@@ -6,5 +6,5 @@
          :zen/desc "An expression that returns a boolean value for whether to enable the item. If the expression does not resolve to a boolean, it is considered an error in the design of the Questionnaire.  Form renderer behavior is undefined.  Some tools may attempt to force the value to be a boolean (e.g. is it a non-empty collection, non-null, non-zero - if so, then true).  Systems SHOULD present a warning to the user if a non-boolean valued expression result does not trigger an all-out error.",
          :zen.fhir/type "Expression",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-         :zen.fhir/version "0.6.28",
+         :zen.fhir/version "0.6.29",
          :confirms #{hl7-fhir-r4-core.Expression/schema}}}

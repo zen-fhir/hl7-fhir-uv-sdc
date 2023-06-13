@@ -10,7 +10,7 @@
          :zen/desc "An example library of questions showing how questions can be compiled into a library for use by modular questionnaires",
          :zen.fhir/type "Demographics",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-question-library",
-         :zen.fhir/version "0.6.28",
+         :zen.fhir/version "0.6.29",
          :confirms #{hl7-fhir-r4-core.Resource/schema},
          :type zen/map,
          :keys {:dob {:confirms #{hl7-fhir-r4-core.date/schema}},
