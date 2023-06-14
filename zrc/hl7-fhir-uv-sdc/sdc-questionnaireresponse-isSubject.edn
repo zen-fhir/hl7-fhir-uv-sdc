@@ -6,5 +6,5 @@
          :zen/desc "If present and true, indicates that the item indicates a different subject for this group.",
          :zen.fhir/type "boolean",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-isSubject",
-         :zen.fhir/version "0.6.29",
+         :zen.fhir/version "0.6.29-22",
          :confirms #{hl7-fhir-r4-core.boolean/schema}}}
