@@ -39,7 +39,7 @@
           hl7-fhir-r4-core.cqf-library
           hl7-fhir-r4-core.questionnaire-maxOccurs},
  item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-              :zen.fhir/version "0.6.29-4",
+              :zen.fhir/version "0.6.30",
               :type zen/map,
               :keys {:answerOptionsToggleExpression {:type zen/vector,
                                                      :every {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-answerOptionsToggleExpression/schema},
@@ -199,7 +199,7 @@
          :zen/desc "Defines additional capabilities for controlling data entry and calculating values within the questionnaire.",
          :zen.fhir/type "Questionnaire",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave",
-         :zen.fhir/version "0.6.29-4",
+         :zen.fhir/version "0.6.30",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :type zen/map,
