@@ -6,5 +6,5 @@
          :zen/desc "A FHIRPath or CQL expression, or FHIR Query that resolves to a list of candidate answers for the question item or that establishes context for a group item.  The user may select from among the candidates to choose answers for the question.",
          :zen.fhir/type "Expression",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-candidateExpression",
-         :zen.fhir/version "0.6.30",
+         :zen.fhir/version "0.6.30-1",
          :confirms #{hl7-fhir-r4-core.Expression/schema}}}
