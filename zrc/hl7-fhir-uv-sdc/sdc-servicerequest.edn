@@ -2,7 +2,7 @@
  import #{zen.fhir
           hl7-fhir-uv-sdc.sdc-servicerequest-questionnaire
           hl7-fhir-r4-core.ServiceRequest},
- schema {:zen.fhir/version "0.6.30-11",
+ schema {:zen.fhir/version "0.6.30-12",
          :confirms #{hl7-fhir-r4-core.ServiceRequest/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
