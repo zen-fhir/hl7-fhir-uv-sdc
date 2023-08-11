@@ -6,7 +6,7 @@
           hl7-fhir-r4-core.rendering-xhtml
           hl7-fhir-uv-sdc.sdc-codesystem},
  concept-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-                 :zen.fhir/version "0.6.30-7",
+                 :zen.fhir/version "0.6.30-10",
                  :type zen/map,
                  :keys {:code {:fhir/flags #{:MS}},
                         :display {:fhir/flags #{:MS}},
@@ -27,7 +27,7 @@
                                   :every {:fhir/flags #{:MS},
                                           :confirms #{hl7-fhir-uv-sdc.sdc-codesystem/concept-schema}}}},
                  :fhir/flags #{:MS}},
- schema {:zen.fhir/version "0.6.30-7",
+ schema {:zen.fhir/version "0.6.30-10",
          :confirms #{hl7-fhir-r4-core.CodeSystem/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
