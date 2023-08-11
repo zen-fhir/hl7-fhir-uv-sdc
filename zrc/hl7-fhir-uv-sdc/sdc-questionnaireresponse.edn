@@ -9,7 +9,7 @@
           hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia
           hl7-fhir-r4-core.QuestionnaireResponse},
  item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-              :zen.fhir/version "0.6.30-12",
+              :zen.fhir/version "0.6.30-13",
               :type zen/map,
               :keys {:itemMedia {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-itemMedia/schema},
                                  :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemMedia"},
@@ -49,7 +49,7 @@
                                     :confirms #{hl7-fhir-uv-sdc.sdc-questionnaireresponse/item-schema}}}},
               :require #{:linkId},
               :fhir/flags #{:MS}},
- schema {:zen.fhir/version "0.6.30-12",
+ schema {:zen.fhir/version "0.6.30-13",
          :confirms #{hl7-fhir-r4-core.QuestionnaireResponse/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
