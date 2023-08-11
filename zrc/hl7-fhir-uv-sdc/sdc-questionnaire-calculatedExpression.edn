@@ -6,5 +6,5 @@
          :zen/desc "Calculated value for a question answer as determined by an evaluated expression.",
          :zen.fhir/type "Expression",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-         :zen.fhir/version "0.6.30-13",
+         :zen.fhir/version "0.6.30-14",
          :confirms #{hl7-fhir-r4-core.Expression/schema}}}
