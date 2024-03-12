@@ -10,7 +10,7 @@
           hl7-fhir-r4-core.variable
           hl7-fhir-r4-core.cqf-library},
  item-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-              :zen.fhir/version "0.6.32",
+              :zen.fhir/version "0.6.42",
               :type zen/map,
               :keys {:isSubject {:confirms #{hl7-fhir-uv-sdc.sdc-questionnaire-isSubject/schema},
                                  :fhir/extensionUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-isSubject"},
@@ -34,7 +34,7 @@
          :zen/desc "Defines elements that allow conversion of a QuestionnaireResponse to a FHIR resource or Bundle of FHIR resources using the Definition-based extraction mechanism",
          :zen.fhir/type "Questionnaire",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-defn",
-         :zen.fhir/version "0.6.32",
+         :zen.fhir/version "0.6.42",
          :confirms #{hl7-fhir-uv-sdc.sdc-questionnaire/schema
                      zen.fhir/Resource},
          :type zen/map,
